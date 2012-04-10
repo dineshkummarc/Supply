@@ -11,6 +11,7 @@ using Web.Attributes;
 namespace MvcMovie.Areas.Admin.Controllers
 {
 
+
     [AuthorizeByRole(Roles = "Administrator,Config,ConfigEdit")] 
     public class ConfigsController : CruddyController
     {
