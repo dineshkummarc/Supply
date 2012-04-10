@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2>Details</h2>
+
+
+
+
+<div class="vidform"> 
+    @Form.Label(name: "Email", value: Model.Email) 
+    @Form.Label(name: "LastLogin", value: Model.LastLogin) 
+    @Form.Label(name: "CreatedAt", value: Model.CreatedAt) 
+    @Form.Label(name: "UpdatedAt", value: Model.UpdatedAt) 
+    @Form.Label(name: "IsBanned", value: Model.IsBanned)  
+</div>
+ 
+
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

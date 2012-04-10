@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Logs</h2> 
+ 
+@List.Filter( "Logs", "Index","admin", (string)TempData["query"]) 
+
+<div>TotalRecords : @ViewBag.TotalRecords </div>  
+
+<p/> 
+@Html.Raw(List.Pager((int)ViewBag.CurrentPage, (int)ViewBag.PageSize, (int)ViewBag.TotalRecords, "/Admin/Logs/Index") )
+<p/>
+
+
+<table>
+    <tr>
+        <th></th>
+        <th>Summary</th> 
+        <th>Level</th> 
+        <th>IpAddress</th> 
+        <th>Server</th>
+        <th>Session</th>
+        <th>User</th>
+        <th>Email</th>
+        <th>Date</th>
+    </tr>
+@foreach (var item in Model)
+{
+    <tr> 
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) 
+
+        </td>
+        <td>@item.Summary</td> 
+        <td>@item.Level</td> 
+        <td>@item.IpAddress</td>  
+        <td>@item.Server</td> 
+        <td>@item.Session</td> 
+        <td>@item.UserName</td> 
+        <td>@item.Email</td>  
+        <td>@item.UpdatedAt</td>  
+    </tr>
+}
+
+</table>

@@ -1,0 +1,194 @@
+﻿@model MvcMovie.Areas.Admin.Controllers.LogDto
+
+@{
+    ViewBag.Title = "ViewPage3";
+}
+
+<h2>ViewPage3</h2>
+
+
+    <h2>LogDto</h2>
+	
+	
+	
+	
+<div id="grid"></div>
+
+
+    <div class="display-label">name:Summary</div>
+    <div class="display-field">ValueExpression:Model.Summary</div>
+    <div class="display-field">UnderlyingType:System.String</div>
+    <div class="display-field">JavascriptType:string</div>
+    <div class="display-field">IsPrimaryKey:False</div>
+    <div class="display-field">IsReadOnly:False</div>
+	<br /><br />
+
+    <div class="display-label">name:Level</div>
+    <div class="display-field">ValueExpression:Model.Level</div>
+    <div class="display-field">UnderlyingType:System.String</div>
+    <div class="display-field">JavascriptType:string</div>
+    <div class="display-field">IsPrimaryKey:False</div>
+    <div class="display-field">IsReadOnly:False</div>
+	<br /><br />
+
+    <div class="display-label">name:IpAddress</div>
+    <div class="display-field">ValueExpression:Model.IpAddress</div>
+    <div class="display-field">UnderlyingType:System.String</div>
+    <div class="display-field">JavascriptType:string</div>
+    <div class="display-field">IsPrimaryKey:False</div>
+    <div class="display-field">IsReadOnly:False</div>
+	<br /><br />
+
+    <div class="display-label">name:Server</div>
+    <div class="display-field">ValueExpression:Model.Server</div>
+    <div class="display-field">UnderlyingType:System.String</div>
+    <div class="display-field">JavascriptType:string</div>
+    <div class="display-field">IsPrimaryKey:False</div>
+    <div class="display-field">IsReadOnly:False</div>
+	<br /><br />
+
+    <div class="display-label">name:Session</div>
+    <div class="display-field">ValueExpression:Model.Session</div>
+    <div class="display-field">UnderlyingType:System.String</div>
+    <div class="display-field">JavascriptType:string</div>
+    <div class="display-field">IsPrimaryKey:False</div>
+    <div class="display-field">IsReadOnly:False</div>
+	<br /><br />
+
+    <div class="display-label">name:UserName</div>
+    <div class="display-field">ValueExpression:Model.UserName</div>
+    <div class="display-field">UnderlyingType:System.String</div>
+    <div class="display-field">JavascriptType:string</div>
+    <div class="display-field">IsPrimaryKey:False</div>
+    <div class="display-field">IsReadOnly:False</div>
+	<br /><br />
+
+    <div class="display-label">name:Email</div>
+    <div class="display-field">ValueExpression:Model.Email</div>
+    <div class="display-field">UnderlyingType:System.String</div>
+    <div class="display-field">JavascriptType:string</div>
+    <div class="display-field">IsPrimaryKey:False</div>
+    <div class="display-field">IsReadOnly:False</div>
+	<br /><br />
+
+    <div class="display-label">name:UpdatedAt</div>
+    <div class="display-field">ValueExpression:String.Format("{0:g}", Model.UpdatedAt)</div>
+    <div class="display-field">UnderlyingType:System.DateTime</div>
+    <div class="display-field">JavascriptType:date</div>
+    <div class="display-field">IsPrimaryKey:False</div>
+    <div class="display-field">IsReadOnly:False</div>
+	<br /><br />
+
+	
+	
+	 
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+	
+	
+	
+	
+<script type="text/javascript">
+
+    var dateRegExp = /^\/Date\((.*?)\)\/$/;
+
+    function toDate(value) {
+        var date = dateRegExp.exec(value);
+        return new Date(parseInt(date[1]));
+    }
+
+    $(document).ready(function () {
+        var url = '@Url.Action("Grid")';
+
+        var dataSource = new kendo.data.DataSource({
+            serverPaging: true,
+            serverSorting: true,
+            serverFiltering: true,
+            pageSize: 20,
+            transport: {
+                read: {
+                    type: 'post',
+                    dataType: 'json',
+                    url: url
+                },
+                // annyoing work-around for adding date types to the request
+                parameterMap: function (options) {
+                    if (options.filter) {
+                        options.filter.filters[0].value = kendo.toString(options.filter.filters[0].value, "MM/dd/yyyy");
+                    }
+                    return options;
+                }
+            },
+            schema: {
+                data: 'data',
+                total: 'total',
+                model: {
+                    id: 'ID',
+                    fields: {
+					
+				
+ 
+                        Summary: { type: 'string' }, 
+ 
+                        Level: { type: 'string' }, 
+ 
+                        IpAddress: { type: 'string' }, 
+ 
+                        Server: { type: 'string' }, 
+ 
+                        Session: { type: 'string' }, 
+ 
+                        UserName: { type: 'string' }, 
+ 
+                        Email: { type: 'string' }, 
+ 
+                        UpdatedAt: { type: 'date' }, 
+ 
+                    }
+                }
+            }
+        });
+
+        $('#grid').kendoGrid({
+            dataSource: dataSource,
+            columns: [
+				
+ 
+                { field: 'Summary', title: 'Summary'    },
+ 
+                { field: 'Level', title: 'Level'    },
+ 
+                { field: 'IpAddress', title: 'IpAddress'    },
+ 
+                { field: 'Server', title: 'Server'    },
+ 
+                { field: 'Session', title: 'Session'    },
+ 
+                { field: 'UserName', title: 'UserName'    },
+ 
+                { field: 'Email', title: 'Email'    },
+ 
+                { field: 'UpdatedAt', title: 'UpdatedAt'    },
+ 
+            ],
+            filterable: true,
+            scrollable: false,
+            sortable: {
+                mode: 'multiple'
+            },
+            pageable: true
+        });
+    });
+    
+
+</script>
+
+
+	
+	
+	
+	
+	
+

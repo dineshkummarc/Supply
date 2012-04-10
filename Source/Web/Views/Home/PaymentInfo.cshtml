@@ -1,0 +1,22 @@
+﻿@model MvcMovie.Models.PaymentModel
+@{
+    ViewBag.Title = "PaymentInfo";
+}
+
+<h2>PaymentInfo</h2>
+
+@Assets.Script("jquery.validate.min.js")  
+@Assets.Script("jquery.validate.unobtrusive.min.js")   
+
+<div class="vidform">
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)  
+         
+            
+        @Form.TextBoxRequired(name: "Card Number", value: Model.Number, maxLength: 16) 
+        @Form.TextBox(name: "Exp Date", value: "05/2012")  
+        @Form.Submit()
+    }
+</div>
+ 

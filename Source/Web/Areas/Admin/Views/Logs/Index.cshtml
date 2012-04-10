@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Index2";
+}
+
+<h2>Index </h2>
+
+
+
+
+
+<div id="grid"></div>
+
+<script type="text/javascript">
+
+    var dateRegExp = /^\/Date\((.*?)\)\/$/;
+
+    function toDate(value) {
+        var date = dateRegExp.exec(value);
+        return new Date(parseInt(date[1]));
+    }
+
+    $(document).ready(function () {
+        var url = '@Url.Action("Grid")';
+
+        var dataSource = new kendo.data.DataSource({
+            serverPaging: true,
+            serverSorting: true,
+            serverFiltering: true,
+            pageSize: 20,
+            transport: {
+                read: {
+                    type: 'post',
+                    dataType: 'json',
+                    url: url
+                },
+                // annyoing work-around for adding date types to the request
+                parameterMap: function (options) {
+                    if (options.filter) {
+                        options.filter.filters[0].value = kendo.toString(options.filter.filters[0].value, "MM/dd/yyyy");
+                    }
+                    return options;
+                }
+            },
+            schema: {
+                data: 'data',
+                total: 'total',
+                model: {
+                    id: 'ID',
+                    fields: {
+                        Summary: { type: 'string' },
+                        Email: { type: 'string' },
+                        IpAddress: { type: 'string' },
+                        UserName: { type: 'string' },
+                        Session: { type: 'string' },
+                        UpdatedAt: { type: 'date' }
+                    }
+                }
+            }
+        });
+
+        $('#grid').kendoGrid({
+            dataSource: dataSource,
+            columns: [
+                { field: 'ID', title: ' ', template: '<a class="id nowrap" href="/details/#= kendo.toString(Id)#"> details </a>', sortable: false, filterable: false },
+                { field: 'Summary', title: 'Summary' },
+                { field: 'IpAddress', title: 'IpAddress' },
+                { field: 'Session', title: 'Session' },
+                { field: 'UserName', title: 'User' },
+                { field: 'Email' },
+                { field: 'UpdatedAt', title: 'Date', template: '<div class="date nowrap"> #= kendo.toString(toDate(UpdatedAt), "MM/dd/yyyy HH:mm")# </div>' }
+            ],
+            filterable: true,
+            scrollable: false,
+            sortable: {
+                mode: 'multiple'
+            },
+            pageable: true
+        });
+    });
+    
+
+</script>
+

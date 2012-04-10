@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr> 
+        <th>RoleName</th> 
+    </tr>
+
+@foreach (var item in Model) {
+    <tr> 
+        <td>@item.RoleName</td>  
+    </tr>
+}
+
+</table>
+
+
+
+
+

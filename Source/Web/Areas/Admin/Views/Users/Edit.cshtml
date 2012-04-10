@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+
+
+@Assets.Script("jquery.validate.min.js")  
+@Assets.Script("jquery.validate.unobtrusive.min.js")  
+
+
+<div class="vidform">
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true) 
+        @Form.HiddenID(Model.ID)
+        @Form.TextBoxRequired(name: "Email", value: Model.Email) 
+        @Form.Submit()
+    }
+</div>
+ 
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

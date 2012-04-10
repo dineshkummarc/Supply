@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@Assets.Script("jquery.validate.min.js")  
+@Assets.Script("jquery.validate.unobtrusive.min.js")   
+
+
+<div class="vidform">
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)  
+        @Form.TextBoxRequired(name: "Title", value: Model.Title) 
+        @Form.TextBox(name: "Genre", value: Model.Genre) 
+        @Form.TextBox(name: "Price", value: Model.Price) 
+        @Form.TextBox(name: "Rating", value: Model.Rating) 
+        @Form.Submit()
+    }
+</div>
+  
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

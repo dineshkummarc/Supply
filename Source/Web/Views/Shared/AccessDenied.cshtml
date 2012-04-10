@@ -1,0 +1,11 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Access Denied";
+}
+
+<h2>
+    Sorry, Access to page is denied.
+</h2>  
+Access denied for <strong>@User.Identity.Name</strong>. @Html.ActionLink("Log On", "LogOn", "Account", new { area = "" }, new { }) with a different account
+    

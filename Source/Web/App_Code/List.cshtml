@@ -1,0 +1,64 @@
+﻿@using System.Text
+@functions{ 
+    public static string Pager(int currentPage, int pageSize, int totalRecords, string urlPrefix)
+    {
+        var sb1 = new StringBuilder();
+        int totalPages = totalRecords % pageSize == 0 ? totalRecords / pageSize : totalRecords / pageSize + 1;
+        if (totalPages <= 1)
+        {
+            return sb1.ToString();
+        }
+        AddPrevLink(currentPage, urlPrefix, sb1); 
+        AddPageNumberLinks(currentPage, urlPrefix, totalPages, sb1); 
+        AddNextPageLink(currentPage, urlPrefix, sb1, totalPages); 
+        return sb1.ToString();
+    }
+
+    private static void AddPrevLink(int currentPage, string urlPrefix, StringBuilder sb1)
+    {
+        var href = "";
+        if (currentPage > 1)
+        {
+            href = String.Format(" href=\"{0}/{1}\" ", urlPrefix, currentPage - 1);
+        }
+        sb1.AppendLine(String.Format("<a {0} >Previous</a>", href));
+    }
+
+    private static void AddNextPageLink(int currentPage, string urlPrefix, StringBuilder sb1, int totalPages)
+    {
+        string href = "";
+        if (currentPage < totalPages)
+        {
+            href = String.Format("href=\"{0}/{1}\"", urlPrefix, currentPage + 1);
+        }
+        sb1.AppendLine(String.Format("<a {0} >Next</a>", href));
+    }
+
+    private static void AddPageNumberLinks(int currentPage, string urlPrefix, int totalPages, StringBuilder sb1)
+    {
+        string href = "";
+        const int numNextLinks = 4;
+        int minpageToShow = currentPage - numNextLinks;
+        int maxpageToShow = currentPage + numNextLinks;
+        for (int i = Math.Max(1, minpageToShow); i <= Math.Min(totalPages, maxpageToShow); i++)
+        {
+            href = (currentPage == i) ? "" : String.Format("href=\"{0}/{1}\"", urlPrefix, i);
+            sb1.AppendLine(String.Format("<a {0} >{1}</a>", href,
+                                         (i == minpageToShow || i == maxpageToShow) ? "..." : i.ToString()));
+        }
+    }
+
+}
+ 
+
+@helper Filter(string controller, string action, string area, string query)
+    {  
+    <fieldset class="filter left">
+        <legend class="clearFilterButton">Filter</legend>  
+        <form action="/@area/@controller/@action" method="post">   
+            <input type="text" name="Search" id="Search" value='@query'   /> 
+            <button type="submit" class="button positive">Search</button> 
+        </form> 
+    </fieldset>
+    <br class="clear"/>
+} 

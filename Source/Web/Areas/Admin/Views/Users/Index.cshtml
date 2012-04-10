@@ -1,0 +1,46 @@
+﻿@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>Email</th> 
+        <th>UserName</th>
+        <th>Comment</th>
+        <th>IsApproved</th>
+        <th>DateCreated</th>
+        <th>DateLastLogin</th>
+        <th>DateLastPasswordChange</th> 
+        <th></th>  
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>@item.Email</td>  
+        <td>@item.UserName</td> 
+        <td>@item.Comment</td> 
+        <td>@item.IsApproved</td>  
+        <td>@item.DateCreated</td>   
+        <td>@item.DateLastLogin</td>  
+        <td>@item.DateLastPasswordChange</td>  
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.UserName }) |
+            @Html.ActionLink("Details", "Details", new { id = item.UserName })  |
+            @Html.ActionLink("Roles", "Index", "RoleMemberships", new { Area = "Admin" }, new { id = "" })   @*  item.UserName*@  
+        </td>
+
+    </tr>
+}
+
+</table>
+
+
+
+ 

@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+
+
+
+<div class="vidform">  
+        @Form.Label(name: "Name", value: Model.Name) 
+        @Form.Label(name: "Value", value: Model.Value) 
+        @Form.Label(name: "UpdatedAt", value: Model.UpdatedAt)  
+</div>
+ 
+  
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+

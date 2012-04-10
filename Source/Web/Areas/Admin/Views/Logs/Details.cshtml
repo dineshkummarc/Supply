@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+ 
+
+
+<div class="vidform">  
+    @Form.Label(name: "Description", value: Model.Description) 
+    @Form.Label(name: "Summary", value: Model.Summary) 
+    @Form.Label(name: "Logger", value: Model.Logger) 
+    @Form.Label(name: "Status", value: Model.Status) 
+    @Form.Label(name: "IpAddress", value: Model.IpAddress) 
+    @Form.Label(name: "Browser", value: Model.Browser) 
+    @Form.Label(name: "UserName", value: Model.UserName) 
+    @Form.Label(name: "Application", value: Model.Application) 
+    @Form.Label(name: "Type", value: Model.Type) 
+    @Form.Label(name: "Email", value: Model.Email) 
+    @Form.Label(name: "Layout", value: Model.Layout) 
+    @Form.Label(name: "UpdatedAt", value: Model.UpdatedAt) 
+    
+     
+
+</div>
+ 
+
+
+<p> 
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+
+

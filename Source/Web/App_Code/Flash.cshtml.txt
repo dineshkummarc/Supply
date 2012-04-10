@@ -1,0 +1,33 @@
+﻿
+@helper Show() 
+{
+    var message = "test message";
+    var className = "info";
+
+    if (TempData["info"] != null)
+    {
+        message = TempData["info"].ToString();
+        className = "info";
+    }
+    else if (TempData["warning"] != null)
+    {
+        message = TempData["warning"].ToString();
+        className = "warning";
+    }
+    else if (TempData["error"] != null)
+    {
+        message = TempData["error"].ToString();
+        className = "error";
+    } 
+    
+    <script>
+        $(document).ready(function () {
+            $('#flash').html('@HttpUtility.HtmlEncode(message)');
+            $('#flash').toggleClass('@className');
+            $('#flash').slideDown('slow');
+            $('#flash').click(function () { $('#flash').toggle('highlight') });
+        });
+    </script>
+}
+
+ 

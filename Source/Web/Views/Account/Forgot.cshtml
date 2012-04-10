@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Forgot";
+}
+
+<h2>Password Recovery</h2>
+
+
+
+
+@Assets.Script("jquery.validate.min.js")  
+@Assets.Script("jquery.validate.unobtrusive.min.js")  
+
+
+
+@Assets.Script("jquery.validate.min.js")  
+@Assets.Script("jquery.validate.unobtrusive.min.js")   
+
+@if (@ViewBag.Result ?? false)
+{ 
+    <div>Please check you email to recover your password</div>
+}
+else
+{
+    <div class="vidform">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)     
+        
+            @Form.TextBoxRequired(name: "Email", value: Model.Email)  
+        
+            @Form.Submit()
+        }
+    </div> 
+}
