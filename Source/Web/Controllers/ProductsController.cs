@@ -23,6 +23,10 @@ namespace MvcMovie.Controllers{
         {
             IEnumerable<dynamic> items = Get();
             return View(items);
+        }
+        public virtual ViewResult ViewPage2()
+        { 
+            return View( );
         } 
          
     }
