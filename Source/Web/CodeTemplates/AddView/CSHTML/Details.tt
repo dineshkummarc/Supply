@@ -14,87 +14,36 @@
 <#
 MvcTextTemplateHost mvcHost = (MvcTextTemplateHost)(Host);
 #>
-@model <#= mvcHost.ViewDataTypeName #>
-<#
-// The following chained if-statement outputs the file header code and markup for a partial view, a content page, or a regular view.
-if(mvcHost.IsPartialView) {
-#>
 
-<#
-} else if(mvcHost.IsContentPage) {
-#>
 
 @{
-    ViewBag.Title = "<#= mvcHost.ViewName#>";
-<#
-if (!String.IsNullOrEmpty(mvcHost.MasterPageFile)) {
-#>
-    Layout = "<#= mvcHost.MasterPageFile#>";
-<#
-}
-#>
+    ViewBag.Title = "Details";
 }
 
-<h2><#= mvcHost.ViewName#></h2>
+<h2>Details</h2>
 
+@Assets.Script("jquery.validate.min.js")  
+@Assets.Script("jquery.validate.unobtrusive.min.js")   
+
+
+<div class="vidform"> 
 <#
-} else {
-#>
-
-@{
-    Layout = null;
+foreach (ModelProperty property in GetModelProperties(mvcHost.ViewDataType)) { 
+	if (!property.IsPrimaryKey) {
+#> 
+    @Form.Label(name: "<#= property.Name #>", value: Model.<#= property.Name #>) 
+<# 
+	}
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title><#= mvcHost.ViewName #></title>
-</head>
-<body>
-<#
-    PushIndent("    ");
-}
-#>
-<fieldset>
-    <legend><#= mvcHost.ViewDataType.Name #></legend>
-<#
-foreach (ModelProperty property in GetModelProperties(mvcHost.ViewDataType)) {
-    if (!property.IsPrimaryKey) {
-#>
-
-    <div class="display-label"><#= property.Name #></div>
-    <div class="display-field">@<#= property.ValueExpression #></div>
-<#
-    }
-}
-#>
-</fieldset>
-<p>
-<#
-string pkName = GetPrimaryKeyName(mvcHost.ViewDataType);
-if (pkName != null) {
-#>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.<#= pkName #> }) |
+#>  
+</div>
+  
+<div>
     @Html.ActionLink("Back to List", "Index")
-<#
-} else {
-#>
-    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-<#
-}
-#>
-</p>
-<#
-if(!mvcHost.IsPartialView && !mvcHost.IsContentPage) {
-    ClearIndent();
-#>
-</body>
-</html>
-<#
-}
-#>
+</div>
+
+
+
 
 <#+
 // Describes the information about a property on the model
@@ -102,12 +51,16 @@ class ModelProperty {
     public string Name { get; set; }
     public string ValueExpression { get; set; }
     public Type UnderlyingType { get; set; }
+    public string JavascriptType { get; set; } 
     public bool IsPrimaryKey { get; set; }
-    public bool IsReadOnly { get; set; }
+    public bool IsReadOnly { get; set; } 
+    public string TableOptions { get; set; } 
 }
 
 // Change this list to include any non-primitive types you think should be eligible for display/edit
 static Type[] bindableNonPrimitiveTypes = new[] {
+    typeof(Int32),
+    typeof(int),
     typeof(string),
     typeof(decimal),
     typeof(Guid),
@@ -175,6 +128,24 @@ IEnumerable<string> GetPrimaryKeyNames(Type type) {
     return GetEligibleProperties(type).Where(mp => mp.IsPrimaryKey).Select(mp => mp.Name);
 }
 
+string GetJavascriptType(Type type)
+{
+	return type.ToString().Replace("System.","").Replace("DateTime","Date").ToLower();
+}
+string GetTableOptions(bool isPrimary, Type type)
+{
+	var r = "        "; 
+	if ( type ==  typeof(System.DateTime))
+	{
+		r = @", template: '<div class=\'date nowrap\'> #= kendo.toString(toDate(UpdatedAt), \'MM/dd/yyyy HH:mm\')# </div>'";
+	}
+	else if (isPrimary)
+	{
+		r = @", template: '<a class=\'id nowrap\' href=\'/details/#= kendo.toString(Id)#\'> details </a>', sortable: false, filterable: false";
+	} 	
+	return r;
+}
+
 // Helper
 List<ModelProperty> GetEligibleProperties(Type type) {
     List<ModelProperty> results = new List<ModelProperty>();
@@ -186,6 +157,8 @@ List<ModelProperty> GetEligibleProperties(Type type) {
                 Name = prop.Name,
                 ValueExpression = "Model." + prop.Name,
                 UnderlyingType = underlyingType,
+                TableOptions = GetTableOptions(IsPrimaryKey(prop), underlyingType),
+				JavascriptType = GetJavascriptType(underlyingType),
                 IsPrimaryKey = IsPrimaryKey(prop),
                 IsReadOnly = prop.GetSetMethod() == null
             });
@@ -200,3 +173,4 @@ bool IsBindableType(Type type) {
     return type.IsPrimitive || bindableNonPrimitiveTypes.Contains(type);
 }
 #>
+

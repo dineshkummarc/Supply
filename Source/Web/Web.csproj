@@ -148,7 +148,7 @@
     <Compile Include="Areas\Admin\Controllers\ConfigsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ElmahController.cs" />
     <Compile Include="Areas\Admin\Controllers\LogsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\RoleMembershipsController.cs" />
     <Compile Include="Areas\Admin\Controllers\RolesController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
@@ -333,6 +333,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\Product\" />
     <Folder Include="Areas\Api\Views\Shared\" />
     <Folder Include="Public\images\" />
   </ItemGroup>

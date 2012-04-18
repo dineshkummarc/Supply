@@ -65,44 +65,27 @@ if (!String.IsNullOrEmpty(mvcHost.MasterPageFile)) {
 <div id="grid"></div>
 
 <#
-foreach (ModelProperty property in GetModelProperties(mvcHost.ViewDataType)) {
-    if (!property.IsPrimaryKey) {
+foreach (ModelProperty property in GetModelProperties(mvcHost.ViewDataType)) { 
+	if(false){
 #>
 
-    <div class="display-label">name:<#= property.Name #></div>
-    <div class="display-field">ValueExpression:<#= property.ValueExpression #></div>
-    <div class="display-field">UnderlyingType:<#= property.UnderlyingType #></div>
-    <div class="display-field">JavascriptType:<#= property.JavascriptType #></div>
-    <div class="display-field">IsPrimaryKey:<#= property.IsPrimaryKey #></div>
-    <div class="display-field">IsReadOnly:<#= property.IsReadOnly #></div>
+    <div class="display-label">name:			<#= property.Name #></div>
+    <div class="display-field">ValueExpression:	<#= property.ValueExpression #></div>
+    <div class="display-field">UnderlyingType:	<#= property.UnderlyingType #></div>
+    <div class="display-field">JavascriptType:	<#= property.JavascriptType #></div>
+    <div class="display-field">IsPrimaryKey:	<#= property.IsPrimaryKey #></div>
+    <div class="display-field">IsReadOnly:		<#= property.IsReadOnly #></div> 
+    <div class="display-field">TableOptions:	<#= property.TableOptions #></div> 
+	  
 	<br /><br />
-<#
-    }
+	
+<# 
+	}
 }
 #>
 
-	
 	
 	 
-<p>
-<#
-string pkName = GetPrimaryKeyName(mvcHost.ViewDataType);
-if (pkName != null) {
-#>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.<#= pkName #> }) |
-    @Html.ActionLink("Back to List", "Index")
-<#
-} else {
-#>
-    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-<#
-}
-#>
-</p>
-	
-	
-	
 	
 <script type="text/javascript">
 
@@ -144,12 +127,10 @@ if (pkName != null) {
 					
 				
 <#
-foreach (ModelProperty property in GetModelProperties(mvcHost.ViewDataType)) {
-    if (!property.IsPrimaryKey) {
+foreach (ModelProperty property in GetModelProperties(mvcHost.ViewDataType)) { 
 #> 
                         <#= property.Name #>: { type: '<#= property.JavascriptType #>' }, 
-<#
-    }
+<# 
 }
 #> 
                     }
@@ -162,12 +143,10 @@ foreach (ModelProperty property in GetModelProperties(mvcHost.ViewDataType)) {
             columns: [
 				
 <#
-foreach (ModelProperty property in GetModelProperties(mvcHost.ViewDataType)) {
-    if (!property.IsPrimaryKey) {
+foreach (ModelProperty property in GetModelProperties(mvcHost.ViewDataType)) { 
 #> 
-                { field: '<#= property.Name #>', title: '<#= property.Name #>'   <#= property.Template #> },
-<#
-    }
+                { field: '<#= property.Name #>', title: '<#= property.Name #>'   <#= property.TableOptions #> },
+<# 
 }
 #> 
             ],
@@ -205,10 +184,10 @@ class ModelProperty {
     public string Name { get; set; }
     public string ValueExpression { get; set; }
     public Type UnderlyingType { get; set; }
-    public string JavascriptType { get; set; }
-    public string Template { get; set; }
+    public string JavascriptType { get; set; } 
     public bool IsPrimaryKey { get; set; }
-    public bool IsReadOnly { get; set; }
+    public bool IsReadOnly { get; set; } 
+    public string TableOptions { get; set; } 
 }
 
 // Change this list to include any non-primitive types you think should be eligible for display/edit
@@ -286,14 +265,17 @@ string GetJavascriptType(Type type)
 {
 	return type.ToString().Replace("System.","").Replace("DateTime","Date").ToLower();
 }
-string GetTemplate(Type type)
+string GetTableOptions(bool isPrimary, Type type)
 {
-	var r = "";
+	var r = "        "; 
 	if ( type ==  typeof(System.DateTime))
 	{
-			r = "tttttttttttttttttttttttttttt";
+		r = @", template: '<div class=\'date nowrap\'> #= kendo.toString(toDate(UpdatedAt), \'MM/dd/yyyy HH:mm\')# </div>'";
 	}
-	
+	else if (isPrimary)
+	{
+		r = @", template: '<a class=\'id nowrap\' href=\'/details/#= kendo.toString(Id)#\'> details </a>', sortable: false, filterable: false";
+	} 	
 	return r;
 }
 
@@ -308,7 +290,7 @@ List<ModelProperty> GetEligibleProperties(Type type) {
                 Name = prop.Name,
                 ValueExpression = "Model." + prop.Name,
                 UnderlyingType = underlyingType,
-                Template = "",
+                TableOptions = GetTableOptions(IsPrimaryKey(prop), underlyingType),
 				JavascriptType = GetJavascriptType(underlyingType),
                 IsPrimaryKey = IsPrimaryKey(prop),
                 IsReadOnly = prop.GetSetMethod() == null

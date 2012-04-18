@@ -1,8 +1,4 @@
-﻿<#@ template language="C#" HostSpecific="True" #>
-<#
-MvcTextTemplateHost mvcHost = (MvcTextTemplateHost)(Host);
-#>
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;  
@@ -11,22 +7,19 @@ using System.Text;
 using System.Web.Mvc;
 using Web.Models;
 using Web.Infrastructure;
-<#
-var controllerName = mvcHost.ControllerName;
-var nameSpace = mvcHost.Namespace;
-var tableName = controllerName.Replace("Controller","");
-#>
-namespace <#= nameSpace #>{
-    public class <#= controllerName #> : CruddyController 
+using MvcMovie.Models;
+using Web.Attributes;
+namespace MvcMovie.Areas.Admin.Controllers{
+    public class ProductController : CruddyController 
 	{
-        public <#= controllerName #>(ITokenHandler tokenStore):base(tokenStore) 
+        public ProductController(ITokenHandler tokenStore):base(tokenStore) 
 		{
-            _table = new <#= tableName #>();
+            _table = new Product();
             ViewBag.Table = _table;
         }
 		
 		
-
+        /*
 
         public override ViewResult Index()
         {
@@ -48,27 +41,27 @@ namespace <#= nameSpace #>{
         {
             return base.Details(id);
         }
-		
+		*/
 		
 		
 
         [HttpPost]
         public JsonResult Grid(KendoGridRequest request)
         {
-            var fromdb = ((<#= tableName #>)_table).All();
-            var dto = fromdb.Select(x => new <#= tableName #>Dto 
+            var fromdb = ((Product)_table).All();
+            var dto = fromdb.Select(x => new ProductDto 
             {  
                 Id = x.Id,
-				UpdatedAt = x.UpdatedAt,
+				/*UpdatedAt = x.UpdatedAt,
                 IpAddress = x.IpAddress,
                 Session = x.Session,
-                /*FirstName = x.FirstName,
+                FirstName = x.FirstName,
                 LastName = x.LastName,
                 Email = x.Email, Level = x.Level, Server = x.Server, UserName= x.UserName, 
                 Summary = x.Summary,  
                 Email = x.Email*/ 
             }).OrderByDescending(x => x.UpdatedAt);
-            var grid = new KendoGrid< <#= tableName #>Dto>(request, dto);
+            var grid = new KendoGrid< ProductDto>(request, dto);
             return Json(grid);
         }
          
