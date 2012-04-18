@@ -138,5 +138,29 @@ INSERT INTO  [Customers] ([Email], [FirstName], [LastName] ) VALUES
 ('Homer@test.com'	, 'Homer'	, 'Simpson'	),
 ('Barney@test.com'	, 'Barney'	, 'Gumble'  ) 
 GO
+    
    
+
+IF Not EXISTS ( SELECT  * FROM    sys.objects  WHERE   object_id = OBJECT_ID(N'[dbo].[Product]')  AND type IN ( N'U' ) ) 
+begin 
+	CREATE TABLE [dbo].[Product](
+		[Id] [int] IDENTITY(1,1) NOT NULL  PRIMARY KEY  CLUSTERED (	[Id] ASC) ON [PRIMARY],
+		[Title] [nvarchar](50) NULL,  
+		[Description] [nvarchar](500) NULL, 
+		[Price] [money] NULL, 
+		[MemberPrice] [money] NULL,  
+		[CreatedAt] [datetime] not null default(getdate()) ,
+		[UpdatedAt] [datetime]  not null default(getdate()) 
+		) ON [PRIMARY] 
+	INSERT INTO  [Product] ([Title],  [Price], [MemberPrice]) VALUES  
+	('Cable Retractor',    13.99, 7.99   )  ,
+	('Cell Filler',   13.99, 7.99  ) ,
+	('Forklift Attachment',   13.99, 7.99  ) ,
+	('Hollow Post Drill',   14.99, 7.99  )  ,
+	('Lifiting Beam',   12.99, 7.99  ) ,
+	('PVC Syringe',   17.99, 7.99  )  
+end
+		
+GO					    
+ 
 
