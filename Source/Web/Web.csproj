@@ -333,7 +333,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Views\Product\" />
     <Folder Include="Areas\Api\Views\Shared\" />
     <Folder Include="Public\images\" />
   </ItemGroup>
@@ -396,6 +395,10 @@
     <Content Include="Areas\Admin\Views\Logs\ViewPage1.cshtml" />
     <Content Include="Areas\Admin\Views\Logs\ViewPage2.cshtml" />
     <Content Include="Areas\Admin\Views\Logs\ViewPage3.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Details.cshtml" />
     <None Include="CodeTemplates\AddController\Controller.tt" />
     <None Include="CodeTemplates\AddView\AspxCSharp\Create.tt" />
     <None Include="CodeTemplates\AddView\AspxCSharp\Delete.tt" />

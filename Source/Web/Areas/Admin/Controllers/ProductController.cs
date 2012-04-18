@@ -19,13 +19,11 @@ namespace MvcMovie.Areas.Admin.Controllers{
         }
 		
 		
-        /*
 
         public override ViewResult Index()
         {
             return View();
         } 
-
         [AuthorizeByRole(Roles = "Dev")]
         public override ActionResult Edit(int id)
         {
@@ -41,6 +39,8 @@ namespace MvcMovie.Areas.Admin.Controllers{
         {
             return base.Details(id);
         }
+        /*
+
 		*/
 		
 		
@@ -52,8 +52,11 @@ namespace MvcMovie.Areas.Admin.Controllers{
             var dto = fromdb.Select(x => new ProductDto 
             {  
                 Id = x.Id,
-				/*UpdatedAt = x.UpdatedAt,
-                IpAddress = x.IpAddress,
+				UpdatedAt = x.UpdatedAt,
+                Title = x.Title,
+                Price = x.Price,
+                MemberPrice = x.MemberPrice
+                /*IpAddress = x.IpAddress,
                 Session = x.Session,
                 FirstName = x.FirstName,
                 LastName = x.LastName,

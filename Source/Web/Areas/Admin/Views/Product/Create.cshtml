@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    string tableName = ViewBag.Table.TableName;
+    
+    //Editor specific stuff
+    string keyField = ViewBag.Table.PrimaryKeyField;
+    string keyValue = ViewBag.Table.GetPrimaryKey(Model).ToString();
+}
+<h1>@Html.ActionLink(tableName,"index") >> Edit @Form.Descriptor(Model)</h1>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Form.BuildInputs(Model)
+    <p>
+        <input type="submit" value="go" />
+    </p>
+}
