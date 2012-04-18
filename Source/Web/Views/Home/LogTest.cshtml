@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>@ViewBag.Message</h2>
+<p>
+    To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+</p>
+<p>
+Hello Jeremy
+</p>
+<p>
+    
+    @Html.ActionLink("PaymentInfo","PaymentInfo", "Home")  
+</p>
+<p>
+    
+    @Html.ActionLink("PersonalInfo", "PersonalInfo", "Home")  
+</p>
+
+
+<p>
+    @Html.ActionLink("My Account", "Me", "Account")  
+
+</p>
+
+<p>
+    <a href="elmah.axd">errors</a>
+
+</p>
+
+<p>
+    <a href="glimpse.axd">glimpse</a>
+
+</p>
+
+<p> 
+<div class="vidform">
+    @using (Html.BeginForm("LogInfo", "Home"))
+    {    
+        @Form.Submit(value: "Loginfo")
+    }
+</div> 
+</p>
+<p> 
+<div class="vidform">
+    @using (Html.BeginForm("LogWarn", "Home"))
+    {    
+        @Form.Submit(value: "LogWarn")
+    }
+</div> 
+</p>
+<p> 
+<div class="vidform">
+    @using (Html.BeginForm("LogError", "Home"))
+    {    
+        @Form.Submit(value: "LogError")
+    }
+</div> 
+</p>
+
+<p> 
+<div class="vidform">
+    @using (Html.BeginForm("ThrowError", "Home"))
+    {    
+        @Form.Submit(value: "ThrowError")
+    }
+</div> 
+</p>

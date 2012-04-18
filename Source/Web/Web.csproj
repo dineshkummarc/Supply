@@ -242,8 +242,26 @@
     <Content Include="Content\kendo\textures\highlight.png" />
     <Content Include="Dynamic Expressions.html" />
     <Content Include="favicon.ico" />
+    <Content Include="Public\images\banner1.jpg" />
+    <Content Include="Public\images\banner2.jpg" />
+    <Content Include="Public\images\banner3.jpg" />
+    <Content Include="Public\images\bg.png" />
+    <Content Include="Public\images\cat_paw_prints.png" />
+    <Content Include="Public\images\footer1.png" />
+    <Content Include="Public\images\loading.gif" />
+    <Content Include="Public\images\logo.png" />
+    <Content Include="Public\images\pagination.png" />
+    <Content Include="Public\images\picture1.jpg" />
+    <Content Include="Public\images\picture2.jpg" />
+    <Content Include="Public\images\picture3.jpg" />
+    <Content Include="Public\images\picture4.jpg" />
+    <Content Include="Public\images\picture5.jpg" />
+    <Content Include="Public\images\top.png" />
+    <Content Include="Public\index.html" />
     <Content Include="Public\javascripts\backbone-min.js" />
+    <Content Include="Public\javascripts\slides.min.jquery.js" />
     <Content Include="Public\javascripts\underscore-min.js" />
+    <Content Include="Public\stylesheets\Site.css" />
     <Content Include="Public\stylesheets\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Public\stylesheets\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Public\stylesheets\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -322,11 +340,11 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Public\stylesheets\Site.css" />
+    <Content Include="Public\stylesheets\AdminSite.css" />
     <Content Include="Public\javascripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\LogTest.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
@@ -334,7 +352,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Api\Views\Shared\" />
-    <Folder Include="Public\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
@@ -434,8 +451,10 @@
     <Content Include="Views\Account\Forgot.cshtml" />
     <Content Include="Views\Account\ForgotSuccess.cshtml" />
     <Content Include="Areas\Admin\Views\Logs\Index.cshtml" />
-    <Content Include="Views\Shared\_SiteLayout.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\ViewPage1.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

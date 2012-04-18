@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Details</h2>
@@ -11,18 +12,14 @@
 
 
 <div class="vidform"> 
- @foreach (dynamic p in Model)
- { 
-    @Form.Label(name: "Title", value: p.Title) 
- 
-    @Form.Label(name: "Description", value: p.Description) 
- 
-    @Form.Label(name: "Price", value: p.Price) 
- 
-    @Form.Label(name: "MemberPrice", value: p.MemberPrice) 
- 
-    @Form.Label(name: "UpdatedAt", value: p.UpdatedAt) 
- }
+     @foreach (dynamic p in Model)
+     {  
+        @p.Title <br/> 
+        @p.Description <br/>
+        @p.Price <br/>
+        @p.MemberPrice <br/>
+        @p.UpdatedAt <br/> <br/> <br/> <br/> <br/> 
+     }
 </div>
   
 <div>

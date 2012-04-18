@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>@ViewBag.Title</title> 
-    @Assets.CSS("site.css")
+    @Assets.CSS("AdminSite.css")
     @Assets.jQuery() 
     @Assets.Script("modernizr-1.7.min.js")  
 
@@ -23,17 +23,14 @@
     <div class="page">
         <header>
             <div id="title">
-              <h1>MVC Movie App</h1>
+              <h1>Battery Supply</h1>
             </div>
             <div id="logindisplay"> 
                 @Html.Partial("_LogOnPartial") 
             </div>
             <nav>
-                <ul id="menu">
-                    <li>@Html.ActionLink("Movie", "Index", "Movies", new { area = "" }, new { })</li>
-                    <li>@Html.ActionLink("User", "Index", "Users",   new { area="Admin"}, new {} )</li>
-                    <li>@Html.ActionLink("Config", "Index", "Configs",   new { area="Admin"}, new {} )</li>
-                    <li>@Html.ActionLink("Log", "Index", "Logs", new { area = "Admin" }, new { })</li>
+                <ul id="menu"> 
+                    <li>@Html.ActionLink("Products", "Index", "Products",   new { area=""}, new {} )</li> 
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { })</li>
                     <li class="none">@Html.ActionLink("Search", "SearchIndex", "Movies", new { area = "" }, new { }  )</li> 
                 </ul>

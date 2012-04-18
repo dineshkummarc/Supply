@@ -17,11 +17,15 @@ namespace MvcMovie.Controllers
         public HomeController(ITokenHandler tokenStore) : base(tokenStore) { } 
 
 
-        private static readonly Logger Log = LogManager.GetLogger(typeof (HomeController).Name); 
+        private static readonly Logger Log = LogManager.GetLogger(typeof (HomeController).Name);
         public ActionResult Index()
         {
             ViewBag.Message = "Welcome to ASP.NET MVC!";
 
+            return View();
+        }
+        public ActionResult LogTest()
+        { 
             return View();
         }
 
