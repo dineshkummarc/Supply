@@ -272,7 +272,6 @@
     <Content Include="Public\stylesheets\plugins\buttons\icons\tick.png" />
     <Content Include="Public\javascripts\jquery.validate.min.js" />
     <Content Include="Public\javascripts\modernizr-1.7.min.js" />
-    <Content Include="Release Notes - Microsoft.Web.Helpers.txt" />
     <Content Include="Scripts\kendo\kendo.all.min.js" />
     <Content Include="Scripts\kendo\kendo.autocomplete.min.js" />
     <Content Include="Scripts\kendo\kendo.binder.min.js" />
