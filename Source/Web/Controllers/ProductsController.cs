@@ -16,8 +16,14 @@ namespace MvcMovie.Controllers{
             _table = new Product();
             ViewBag.Table = _table;
         }
-		
-		
+
+
+
+        public override ViewResult Index()
+        {
+            IEnumerable<dynamic> items = Get();
+            return View(items);
+        } 
          
     }
 }

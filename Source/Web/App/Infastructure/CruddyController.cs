@@ -35,7 +35,7 @@ namespace Web.Infrastructure
             return View(model);
         }
         [HttpGet]
-        public ActionResult Create()
+        public virtual  ActionResult Create()
         {
             return View(_table.Prototype);
         }
