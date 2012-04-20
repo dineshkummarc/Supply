@@ -4,7 +4,8 @@
     <title></title>
 </head>
 <body>
-mobile 
+
+mobile page
 
     <br />
     <span id="browserUserAgent">Your Browser User Agent: </span>
@@ -16,11 +17,6 @@ mobile
 <script type="text/javascript">
     $(function () {
         $('#browserUserAgent').append('<b>' + navigator.userAgent + '</b>');
-
-        var agentID = deviceAgent.match(/(iphone|ipod|ipad)/);
-        if (agentID) {
-            window.location = 'mobile.html';
-        }
-
+ 
     });
 </script>
