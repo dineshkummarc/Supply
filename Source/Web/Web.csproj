@@ -242,6 +242,7 @@
     <Content Include="Content\kendo\textures\highlight.png" />
     <Content Include="Dynamic Expressions.html" />
     <Content Include="favicon.ico" />
+    <Content Include="Public\a.htm" />
     <Content Include="Public\images\banner1.jpg" />
     <Content Include="Public\images\banner2.jpg" />
     <Content Include="Public\images\banner3.jpg" />
@@ -413,9 +414,9 @@
     <Content Include="Areas\Admin\Views\Logs\ViewPage2.cshtml" />
     <Content Include="Areas\Admin\Views\Logs\ViewPage3.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
     <None Include="CodeTemplates\AddController\Controller.tt" />
     <None Include="CodeTemplates\AddView\AspxCSharp\Create.tt" />
     <None Include="CodeTemplates\AddView\AspxCSharp\Delete.tt" />

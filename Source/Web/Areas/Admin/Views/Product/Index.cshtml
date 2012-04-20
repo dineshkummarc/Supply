@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h2>Index</h2>
@@ -68,8 +69,8 @@
 
         $('#grid').kendoGrid({
             dataSource: dataSource,
-            columns: [ 
-                { field: 'Id', title: 'Id'   , template: '<a class=\'id nowrap\' href=\'/details/#= kendo.toString(Id)#\'> details </a>', sortable: false, filterable: false }, 
+            columns: [
+                { field: 'Id', title: 'Id', template: '<a class=\'id nowrap\' href=\'details/#= kendo.toString(Id)#\'>details</a> <a class=\'id nowrap\' href=\'edit/#= kendo.toString(Id)#\'>edit</a>', sortable: false, filterable: false }, 
                 { field: 'Title', title: 'Title'            }, 
                 { field: 'Description', title: 'Description'            }, 
                 { field: 'Price', title: 'Price'            }, 

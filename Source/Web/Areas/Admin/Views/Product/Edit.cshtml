@@ -1,18 +1,45 @@
-﻿@{
+﻿
+
+@{
     ViewBag.Title = "Edit";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-    string tableName = ViewBag.Table.TableName;
-    
-    //Editor specific stuff
-    string keyField = ViewBag.Table.PrimaryKeyField;
-    string keyValue = ViewBag.Table.GetPrimaryKey(Model).ToString();
 }
-<h1>@Html.ActionLink(tableName,"index") >> Edit @Form.Descriptor(Model)</h1>
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.Hidden(keyField, keyValue);
-    @Form.BuildInputs(Model)
-    <p>
-        <input type="submit" value="go" />
-    </p>
-}
+
+<h2>Details</h2>
+
+@Assets.Script("jquery.validate.min.js")  
+@Assets.Script("jquery.validate.unobtrusive.min.js")   
+
+
+
+ 
+<div class="vidform">
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true) 
+        @Form.HiddenID(Model.Id)  
+ 
+        @Form.TextBox(name: "Title", value: Model.Title) 
+ 
+        @Form.TextBox(name: "Description", value: Model.Description) 
+ 
+        @Form.TextBox(name: "Price", value: Model.Price) 
+ 
+        @Form.TextBox(name: "MemberPrice", value: Model.MemberPrice) 
+ 
+        @Form.TextBox(name: "UpdatedAt", value: Model.UpdatedAt) 
+  
+        @Form.Submit()
+    }
+</div>
+  
+  
+  
+  
+  
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+
+
