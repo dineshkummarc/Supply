@@ -20,8 +20,9 @@
 <script type="text/javascript">
     $(function () { 
         $('#browserUserAgent').append('<b>' + navigator.userAgent + '</b>');
-         
-        var agentID = deviceAgent.ToLower().match(/(iphone|ipod|ipad)/);
+
+        var deviceAgent = navigator.userAgent.toLowerCase();
+        var agentID = deviceAgent.match(/(iphone|ipod|ipad)/); 
         if (agentID) {
             window.location = 'mobile.html';
         } 
