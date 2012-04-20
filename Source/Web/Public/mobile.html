@@ -2,29 +2,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script> 
 </head>
 <body>
-    
+mobile 
 
-    first page 
-
-    <br /> 
     <br />
     <span id="browserUserAgent">Your Browser User Agent: </span>
     <br />
-    <br />
-    <div id="Output"></div>
+
 </body>
 </html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script> 
 <script type="text/javascript">
-    $(function () { 
+    $(function () {
         $('#browserUserAgent').append('<b>' + navigator.userAgent + '</b>');
-         
+
         var agentID = deviceAgent.match(/(iphone|ipod|ipad)/);
         if (agentID) {
             window.location = 'mobile.html';
-        } 
+        }
 
     });
 </script>
