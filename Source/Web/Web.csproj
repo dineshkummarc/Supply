@@ -243,6 +243,7 @@
     <Content Include="Dynamic Expressions.html" />
     <Content Include="favicon.ico" />
     <Content Include="Public\a.htm" />
+    <Content Include="Public\iBattery11.png" />
     <Content Include="Public\images\banner1.jpg" />
     <Content Include="Public\images\banner2.jpg" />
     <Content Include="Public\images\banner3.jpg" />
@@ -259,10 +260,13 @@
     <Content Include="Public\images\picture5.jpg" />
     <Content Include="Public\images\top.png" />
     <Content Include="Public\index.html" />
+    <Content Include="Public\IndustrialBattery.htm" />
     <Content Include="Public\javascripts\backbone-min.js" />
     <Content Include="Public\javascripts\slides.min.jquery.js" />
     <Content Include="Public\javascripts\underscore-min.js" />
     <Content Include="Public\mobile.html" />
+    <Content Include="Public\style.css" />
+    <Content Include="Public\Style.html" />
     <Content Include="Public\stylesheets\Site.css" />
     <Content Include="Public\stylesheets\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Public\stylesheets\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -348,7 +352,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\LogTest.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -458,6 +461,7 @@
     <Content Include="Views\Products\ViewPage1.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Products\ViewPage2.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
