@@ -250,6 +250,7 @@
     <Content Include="Public\images\bg.png" />
     <Content Include="Public\images\cat_paw_prints.png" />
     <Content Include="Public\images\footer1.png" />
+    <Content Include="Public\images\gradbkgrd.png" />
     <Content Include="Public\images\loading.gif" />
     <Content Include="Public\images\logo.png" />
     <Content Include="Public\images\pagination.png" />
