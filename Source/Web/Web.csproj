@@ -243,7 +243,7 @@
     <Content Include="Dynamic Expressions.html" />
     <Content Include="favicon.ico" />
     <Content Include="Public\a.htm" />
-    <Content Include="Public\iBattery11.png" />
+    <Content Include="Public\images\iBattery11.png" />
     <Content Include="Public\images\banner1.jpg" />
     <Content Include="Public\images\banner2.jpg" />
     <Content Include="Public\images\banner3.jpg" />
@@ -251,6 +251,7 @@
     <Content Include="Public\images\cat_paw_prints.png" />
     <Content Include="Public\images\footer1.png" />
     <Content Include="Public\images\gradbkgrd.png" />
+    <Content Include="Public\images\iBatteryOffice2.jpg" />
     <Content Include="Public\images\loading.gif" />
     <Content Include="Public\images\logo.png" />
     <Content Include="Public\images\pagination.png" />
@@ -266,7 +267,7 @@
     <Content Include="Public\javascripts\slides.min.jquery.js" />
     <Content Include="Public\javascripts\underscore-min.js" />
     <Content Include="Public\mobile.html" />
-    <Content Include="Public\style.css" />
+    <Content Include="Public\stylesheets\style.css" />
     <Content Include="Public\Style.html" />
     <Content Include="Public\stylesheets\Site.css" />
     <Content Include="Public\stylesheets\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />

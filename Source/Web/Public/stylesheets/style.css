@@ -127,7 +127,7 @@ sup {
 /* Start of the css template */ 
 body 
 {
-     background: url("images/gradbkgrd.png") repeat-x scroll left top #2d2722;
+     background: url("../images/gradbkgrd.png") repeat-x scroll left top #2d2722;
     /*background: none repeat scroll 0 0 #ccc9c9;*/ 
     color: #525252;
     font-family: Arial,Helvetica,sans-serif;

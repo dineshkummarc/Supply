@@ -1,132 +1,118 @@
-﻿ 
-<head>
-<meta charset="UTF-8">
-<title>Cat template - Home</title>
-<link rel="icon" href="images/favicon.gif" type="image/x-icon"/>
- <!--[if lt IE 9]>
- <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0042)http://battery.apphb.com/Public/About.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	Industrial Battery
+</title>
+    @Assets.CSS("style.css")
+    @Assets.jQuery() 
+    @Assets.Script("modernizr-1.7.min.js")  
+     
 
-<link rel="shortcut icon" href="images/favicon.gif" type="image/x-icon"/>  
-    @Assets.CSS("Site.css")
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-    @Assets.Script("slides.min.jquery.js") 
-	<script>
-	    $(function () {
-	        $('#slides').slides({
-	            preload: true,
-	            preloadImage: '/Public/images/loading.gif',
-	            play: 5000,
-	            pause: 2500,
-	            hoverPause: true
-	        });
-	    });
-	</script>
+<meta name="description" content="Industrial Battery Sales and Service has proudly supplied and serviced Chicago with industrial batteries and chargers, since 1977"><meta name="keywords" content="Battery, industrial battery, industrial battery sales and service, industrial battery products, industrial battery villa park, lead acid battery, sealed lead acid battery, crown battery, reconditioned battery, electric forklift battery, industrial battery Chicago, powerhouse charger, high frequency charger, opportunity charger, fast charger, Hobart charger, ametek charger, prestolite power charger, lester charger, charger parts, ametek AC1000 contol board, MTC battery handling equipment, flow-rite watering system, battery repair, battery reconditioning, battery cell replacement, crown lift truck battery, Raymond lift truck battery, yale lift truck battery, Hyster lift truck battery, Toyota lift truck battery, Nissan lift truck battery, reconditioned forklift battery, battery cables, battery connector, material handling">
 
 
-    </head>
-<body>
-    
-    <!--start container-->
-    <div id="container">
 
-        <!--start header-->
+     
 
-        <header>
+
+</head>
+<body> 
+
+
+    <div id="wrapper">
+        <!-- start #menu -->
+        <div id="menu">
+            <ul> 
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { })</li>
+                    <li>@Html.ActionLink("Products", "Index", "Products", new { area = "" }, new { })</li>
+                <li><a href="http://battery.apphb.com/Public/Contact.aspx">Contact</a></li>
+            </ul>
+            <div class="right">
+                
+
+
+            </div>
+        </div>
+        <!-- end #menu -->
+    </div>
+    <div id="splash">
+        <img src="/Public/images/iBattery11.png" width="990" height="106">
+    </div>
+    <!-- end #header -->
+    <div id="page">
+        <div id="page-bgtop">
+            <div id="page-bgbtm">
+                <div id="content" class="grid">
+                    
+    <div id="content">
+        
+
+
  
-            <!--start logo-->
-            <a href="#" id="logo"><img src="/Public/images/logo.png" width="262" height="133" alt="logo"/></a>    
+<div class="contentHolder" contentname="About">
+  
 
-            <!--end logo-->
-	
-            <!--start menu-->
-
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Contact</a></li>
-
-                </ul>
-            </nav>
-            <!--end menu-->
-	
-
-            <!--end header-->
-        </header>
+    
+            @RenderBody()
 
 
-        <!--start intro-->
 
-        <section id="intro">
-            <div id="slides">
-                <div class="slides_container">
-                    <img src="/Public/images/banner1.jpg" width="960" height="300" alt="baner">
-                    <img src="/Public/images/banner2.jpg" width="960" height="300" alt="baner">
-                    <img src="/Public/images/banner3.jpg" width="960" height="300" alt="baner">
+</div> 
 
+ 
+
+
+    </div>
 
                 </div>
-            </div>
- 
-        </section>
-        <!--end intro-->
-   
-   
-        <!--start holder-->
-        <div class="holder_content1">
-   
-            <section class="group5">
-                <h1>Welcome</h1>
-
-                <article>
-
-                    <h2>Douglas Adams:
-                        One of the problems of taking things apart and seeing how they work - supposing you're trying to find out how a cat works--you take that cat apart to see how it works, what you've got in your hands is a non-working cat. The cat wasn't a sort of clunky mechanism that was susceptible to our available tools of analysis. 
-                    </h2>
-
-  
-                </article> 
-   
-            </section>
-
-        </div>
-        <!--end holder-->
-
-   
-        <!--start holder-->
-
-        <div class="holder_content">
-   
-            @RenderBody()
- 
-        </div>
-        <!--end holder-->
-   
-   
-   
-   
+                <!-- end #content -->
+                <div id="sidebar">
+                    
+    <div id="sidebar">
+        <p style="color: Black; line-height: 1.3em; font-style: oblique">
+            <img src="/public/images/iBatteryOffice2.jpg" width="289" height="163" alt="office" class="border"><br><br>
+            Your satisfaction and patronage are important to us, so we are here to ensure your
+            complete satisfaction. Please contact us for all of your battery and charger needs.
+        </p>
     </div>
-    <!--end container-->
-   
-    <!--start footer-->
-    <footer>
-   
-    </footer>
-    <!--end footer-->
-    <!-- Free template distributed by http://freehtml5templates.com -->   
-</body>
-</html>
 
+                </div>
+                <!-- end #sidebar -->
+                <div style="clear: both;">
+                    &nbsp;</div>
+            </div>
+        </div>
+    </div>
+    <!-- end #page -->
+    <!-- start #footer -->
     
+
+     
+
+        <div id="footer-wrapper">
+            <div id="footer">
+                <p style="color: #d1d1d1; text-align: center; font-size: 0.85em; padding: 1.2em">
+                    <a href="http://battery.apphb.com/Public/Default.aspx" style="color: #d1d1d1; padding: 0 2em">Home</a> <a href="http://battery.apphb.com/Public/Products.aspx" style="color: #d1d1d1; padding: 0 2em">Products</a> <a href="./Industrial Battery.htm" style="color: #d1d1d1;
+                            padding: 0 2em">About</a> <a href="http://battery.apphb.com/Public/Services.aspx" style="color: #d1d1d1; padding: 0 2em">
+                                Services</a> <a href="http://battery.apphb.com/Public/Contact.aspx" style="color: #d1d1d1; padding: 0 2em">Contact</a><br>
+                    <br>
+                    Industrial Battery Sales and Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 749 N. Harvard Ave, Villa Park, Illinois &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;630-941-0700 phone</p>
+            </div>
+            <!-- end #footer -->
+        </div>
+      
+
+
+
+
+
+       
+
+
+</body></html>
     
-    
-    
-    
-    
+
+
     
     
     
