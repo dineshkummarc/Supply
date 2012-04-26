@@ -22,7 +22,17 @@ namespace MvcMovie.Controllers{
         public override ViewResult Index()
         {
             IEnumerable<dynamic> items = Get();
-            return View(items);
+            var i = items.Select(x => new ProductDto
+            {
+                Id = x.Id, 
+                Title = x.Title,
+                Description = x.Description,
+                ImageUrl = x.ImageUrl,
+                MemberPriceString = x.MemberPrice.ToString("$0.00"),
+                PriceString = x.Price.ToString("$0.00"),
+                UpdatedAt = x.UpdatedAt
+            });
+            return View(i);
         }
         public virtual ViewResult ViewPage2()
         { 

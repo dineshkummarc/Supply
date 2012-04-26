@@ -17,7 +17,7 @@
             <ul>
                 <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { })</li>
                 <li>@Html.ActionLink("Products", "Index", "Products", new { area = "" }, new { })</li>
-                <li><a href="http://battery.apphb.com/Public/Contact.aspx">Contact</a></li>
+                <li>@Html.ActionLink("Contact", "Index", "Contact", new { area = "" }, new { })</li> 
             </ul>
             <div class="right">
             </div>
@@ -38,19 +38,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- end #content 
-                <div id="sidebar">
-                    <div id="sidebar">
-                        <p style="color: Black; line-height: 1.3em; font-style: oblique">
-                            <img src="/public/images/iBatteryOffice2.jpg" width="289" height="163" alt="office"
-                                class="border"><br>
-                            <br>
-                            Your satisfaction and patronage are important to us, so we are here to ensure your
-                            complete satisfaction. Please contact us for all of your battery and charger needs.
-                        </p>
-                    </div>
-                </div>-->
-                <!-- end #sidebar -->
+
+                @RenderSection("sidebar")
+
                 <div style="clear: both;">
                     &nbsp;</div>
             </div>

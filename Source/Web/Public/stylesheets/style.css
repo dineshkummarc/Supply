@@ -499,3 +499,22 @@ img.aligncenter {
     height: 300px;
     float:left;
     }
+
+
+
+ 
+        #contactform label
+        {
+            width: 140px;
+            float: none;
+            display: block;
+            float:left;
+        } 
+        #contactform  
+        {
+            padding: 40px; 
+        }
+         
+
+
+
