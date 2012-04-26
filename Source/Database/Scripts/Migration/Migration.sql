@@ -139,7 +139,9 @@ INSERT INTO  [Customers] ([Email], [FirstName], [LastName] ) VALUES
 ('Barney@test.com'	, 'Barney'	, 'Gumble'  ) 
 GO
     
-   
+
+	drop table Product
+
 
 IF Not EXISTS ( SELECT  * FROM    sys.objects  WHERE   object_id = OBJECT_ID(N'[dbo].[Product]')  AND type IN ( N'U' ) ) 
 begin 
@@ -147,18 +149,19 @@ begin
 		[Id] [int] IDENTITY(1,1) NOT NULL  PRIMARY KEY  CLUSTERED (	[Id] ASC) ON [PRIMARY],
 		[Title] [nvarchar](50) NULL,  
 		[Description] [nvarchar](500) NULL, 
+		[ImageUrl] [nvarchar](200) NULL, 
 		[Price] [money] NULL, 
 		[MemberPrice] [money] NULL,  
 		[CreatedAt] [datetime] not null default(getdate()) ,
 		[UpdatedAt] [datetime]  not null default(getdate()) 
 		) ON [PRIMARY] 
-	INSERT INTO  [Product] ([Title],  [Price], [MemberPrice]) VALUES  
-	('Cable Retractor',    13.99, 7.99   )  ,
-	('Cell Filler',   13.99, 7.99  ) ,
-	('Forklift Attachment',   13.99, 7.99  ) ,
-	('Hollow Post Drill',   14.99, 7.99  )  ,
-	('Lifiting Beam',   12.99, 7.99  ) ,
-	('PVC Syringe',   17.99, 7.99  )  
+	INSERT INTO  [Product] ([Title], ImageUrl,  [Price], [MemberPrice]) VALUES  
+	('Cable Retractor', 'picture2.jpg' ,   13.99, 7.99   )  ,
+	('Cell Filler',  'picture2.jpg' , 13.99, 7.99  ) ,
+	('Forklift Attachment', 'picture2.jpg' ,  13.99, 7.99  ) ,
+	('Hollow Post Drill', 'picture2.jpg' ,  14.99, 7.99  )  ,
+	('Lifiting Beam', 'picture2.jpg' ,  12.99, 7.99  ) ,
+	('PVC Syringe', 'picture2.jpg' ,  17.99, 7.99  )  
 end
 		
 GO					    

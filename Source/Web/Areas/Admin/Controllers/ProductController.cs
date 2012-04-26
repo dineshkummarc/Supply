@@ -55,7 +55,8 @@ namespace MvcMovie.Areas.Admin.Controllers{
 				UpdatedAt = x.UpdatedAt,
                 Title = x.Title,
                 Price = x.Price,
-                MemberPrice = x.MemberPrice
+                MemberPrice = x.MemberPrice, 
+                ImageUrl = "/Public/images/picture2.jpg"
                 /*IpAddress = x.IpAddress,
                 Session = x.Session,
                 FirstName = x.FirstName,
