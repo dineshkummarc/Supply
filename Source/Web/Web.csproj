@@ -468,12 +468,24 @@
     <Content Include="Views\Products\ViewPage2.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
-    <None Include="Public\pdf\Cable_Retractor.pdf" />
-    <None Include="Public\pdf\Cell_Filler.pdf" />
-    <None Include="Public\pdf\Forklift_Attachment.pdf" />
-    <None Include="Public\pdf\Hollow_Post_Drill.pdf" />
-    <None Include="Public\pdf\Lifting_Beam.pdf" />
-    <None Include="Public\pdf\PVC_Syringe.pdf" />
+    <Content Include="Public\pdf\Cable_Retractor.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Public\pdf\Cell_Filler.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Public\pdf\Forklift_Attachment.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Public\pdf\Hollow_Post_Drill.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Public\pdf\Lifting_Beam.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Public\pdf\PVC_Syringe.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

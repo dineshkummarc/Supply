@@ -159,7 +159,7 @@ begin
 		[CreatedAt] [datetime] not null default(getdate()) ,
 		[UpdatedAt] [datetime]  not null default(getdate()) 
 		) ON [PRIMARY] 
-	INSERT INTO  [Product] ([Title], ImageUrl,  [Price], [MemberPrice]) VALUES  
+	INSERT INTO  [Product] ([Title], PdfUrl,  [Price], [MemberPrice]) VALUES  
 	('Cable Retractor', 'Cable_Retractor.pdf' ,   13.99, 7.99   )  ,
 	('Cell Filler',  'Cell_Filler.pdf' , 13.99, 7.99  ) ,
 	('Forklift Attachment', 'Forklift_Attachment.pdf',  13.99, 7.99  ) ,
