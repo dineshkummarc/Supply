@@ -139,8 +139,11 @@ INSERT INTO  [Customers] ([Email], [FirstName], [LastName] ) VALUES
 ('Barney@test.com'	, 'Barney'	, 'Gumble'  ) 
 GO
     
-
+	
+IF EXISTS ( SELECT  * FROM    sys.objects  WHERE   object_id = OBJECT_ID(N'[dbo].[Product]')  AND type IN ( N'U' ) ) 	
 	drop table Product
+go
+
 
 
 IF Not EXISTS ( SELECT  * FROM    sys.objects  WHERE   object_id = OBJECT_ID(N'[dbo].[Product]')  AND type IN ( N'U' ) ) 
@@ -150,18 +153,19 @@ begin
 		[Title] [nvarchar](50) NULL,  
 		[Description] [nvarchar](500) NULL, 
 		[ImageUrl] [nvarchar](200) NULL, 
+		[PdfUrl] [nvarchar](200) NULL, 
 		[Price] [money] NULL, 
 		[MemberPrice] [money] NULL,  
 		[CreatedAt] [datetime] not null default(getdate()) ,
 		[UpdatedAt] [datetime]  not null default(getdate()) 
 		) ON [PRIMARY] 
 	INSERT INTO  [Product] ([Title], ImageUrl,  [Price], [MemberPrice]) VALUES  
-	('Cable Retractor', 'picture2.jpg' ,   13.99, 7.99   )  ,
-	('Cell Filler',  'picture2.jpg' , 13.99, 7.99  ) ,
-	('Forklift Attachment', 'picture2.jpg' ,  13.99, 7.99  ) ,
-	('Hollow Post Drill', 'picture2.jpg' ,  14.99, 7.99  )  ,
-	('Lifiting Beam', 'picture2.jpg' ,  12.99, 7.99  ) ,
-	('PVC Syringe', 'picture2.jpg' ,  17.99, 7.99  )  
+	('Cable Retractor', 'Cable_Retractor.pdf' ,   13.99, 7.99   )  ,
+	('Cell Filler',  'Cell_Filler.pdf' , 13.99, 7.99  ) ,
+	('Forklift Attachment', 'Forklift_Attachment.pdf',  13.99, 7.99  ) ,
+	('Hollow Post Drill',   'Hollow_Post_Drill.pdf',    14.99, 7.99  )  ,
+	('Lifiting Beam',       'Lifiting_Beam.pdf',        12.99, 7.99  ) ,
+	('PVC Syringe',         'PVC_Syringe.pdf',          17.99, 7.99  )  
 end
 		
 GO					    

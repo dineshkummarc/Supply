@@ -27,7 +27,7 @@ namespace MvcMovie.Controllers{
                 Id = x.Id, 
                 Title = x.Title,
                 Description = x.Description,
-                ImageUrl = x.ImageUrl,
+                PdfUrl = x.PdfUrl,
                 MemberPriceString = x.MemberPrice.ToString("$0.00"),
                 PriceString = x.Price.ToString("$0.00"),
                 UpdatedAt = x.UpdatedAt

@@ -15,8 +15,8 @@
      @foreach (dynamic p in Model)
      {  
         <div class="product"> 
-            @p.Title <br/> 
-            @Assets.Image(@p.ImageUrl) <br/>
+            <span class="title" >@p.Title</span> <br/> 
+            @Assets.PdfLink(@p.PdfUrl, "Link") <br/>
             @p.Description <br/>
             @p.PriceString <br/>
             @p.MemberPriceString <br/>

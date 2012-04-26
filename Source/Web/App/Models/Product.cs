@@ -21,6 +21,7 @@ namespace MvcMovie.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; set; }
+        public string PdfUrl { get; set; }
         public decimal Price { get; set; }
         public decimal MemberPrice { get; set; }
         public string MemberPriceString { get; set; }
