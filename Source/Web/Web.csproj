@@ -244,6 +244,10 @@
     <Content Include="Dynamic Expressions.html" />
     <Content Include="favicon.ico" />
     <Content Include="Public\a.htm" />
+    <Content Include="Public\images\BESbanner.jpg" />
+    <Content Include="Public\images\cableretractor.png" />
+    <Content Include="Public\images\cellfiller.png" />
+    <Content Include="Public\images\forklifthook.png" />
     <Content Include="Public\images\iBattery11.png" />
     <Content Include="Public\images\banner1.jpg" />
     <Content Include="Public\images\banner2.jpg" />
@@ -253,6 +257,7 @@
     <Content Include="Public\images\footer1.png" />
     <Content Include="Public\images\gradbkgrd.png" />
     <Content Include="Public\images\iBatteryOffice2.jpg" />
+    <Content Include="Public\images\liftingbeam.png" />
     <Content Include="Public\images\loading.gif" />
     <Content Include="Public\images\logo.png" />
     <Content Include="Public\images\pagination.png" />
@@ -261,6 +266,8 @@
     <Content Include="Public\images\picture3.jpg" />
     <Content Include="Public\images\picture4.jpg" />
     <Content Include="Public\images\picture5.jpg" />
+    <Content Include="Public\images\postdrill.png" />
+    <Content Include="Public\images\pvcsyringe.png" />
     <Content Include="Public\images\top.png" />
     <Content Include="Public\index.html" />
     <Content Include="Public\IndustrialBattery.htm" />
