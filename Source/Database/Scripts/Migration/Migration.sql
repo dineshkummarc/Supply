@@ -159,13 +159,13 @@ begin
 		[CreatedAt] [datetime] not null default(getdate()) ,
 		[UpdatedAt] [datetime]  not null default(getdate()) 
 		) ON [PRIMARY] 
-	INSERT INTO  [Product] ([Title], PdfUrl,  [Price], [MemberPrice]) VALUES  
-	('Cable Retractor', 'Cable_Retractor.pdf' ,   13.99, 7.99   )  ,
-	('Cell Filler',  'Cell_Filler.pdf' , 13.99, 7.99  ) ,
-	('Forklift Attachment', 'Forklift_Attachment.pdf',  13.99, 7.99  ) ,
-	('Hollow Post Drill',   'Hollow_Post_Drill.pdf',    14.99, 7.99  )  ,
-	('Lifiting Beam',       'Lifiting_Beam.pdf',        12.99, 7.99  ) ,
-	('PVC Syringe',         'PVC_Syringe.pdf',          17.99, 7.99  )  
+	INSERT INTO  [Product] ([Title], [Description],  ImageUrl, PdfUrl,  [Price], [MemberPrice]) VALUES    
+	('Cable Retractor','Compact retractor for large or small cables','cableretractor.png','Cable_Retractor.pdf',13.99,7.99),
+('Cell Filler','Automatic shut-off Cell Filler prolongs battery life','cellfiller.png','Cell_Filler.pdf',13.99,7.99),
+('Forklift Attachment','a forklife adapter for the lifting beam','forklifthook.png','Forklift_Attachment.pdf',13.99,7.99),
+('Hollow Post Drill','Steel precision drill assures a center post ','postdrill.png','Hollow_Post_Drill.pdf',14.99,7.99),
+('Lifiting Beam','Maximum strength for multi-shift electric truck user','liftingbeam.png','Lifiting_Beam.pdf',12.99,7.99),
+('PVC Syringe','Used to adjust gravity on batteries','pvcsyringe.png','PVC_Syringe.pdf',17.99,7.99)
 end
 		
 GO					    
