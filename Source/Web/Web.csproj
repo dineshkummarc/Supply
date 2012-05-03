@@ -277,6 +277,7 @@
     <Content Include="Public\javascripts\slides.min.jquery.js" />
     <Content Include="Public\javascripts\underscore-min.js" />
     <Content Include="Public\mobile.html" />
+    <Content Include="Public\Slideshow.html" />
     <Content Include="Public\stylesheets\style.css" />
     <Content Include="Public\Style.html" />
     <Content Include="Public\stylesheets\Site.css" />
