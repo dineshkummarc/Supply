@@ -15,10 +15,10 @@
      @foreach (dynamic p in Model)
      {  
         <div class="product"> 
-            <h2><span class="title" >@p.Title</span></h2> <br/> 
+            <div class="title" >@p.Title</div> <br/> 
             @Assets.PdfLink(@p.PdfUrl, "Learn more") <br/>
             @Assets.Image(@p.ImageUrl) <br/>
-            <div class="desc" >  @p.Description</div> <br/>
+            @p.Description <br/>
             @p.PriceString <br/>
             @p.MemberPriceString <br/>
 

@@ -127,9 +127,8 @@ sup {
 /* Start of the css template */ 
 body 
 {
-     background: url("../images/gradbkgrd.png") repeat-x scroll left top #2d2722;
-    /*background: none repeat scroll 0 0 #ccc9c9;*/ 
-    color: #525252;
+     background: #000000;
+    color: #000000;
     font-family: Arial,Helvetica,sans-serif;
     font-size: 14px;
     margin: 0;
@@ -145,10 +144,10 @@ h1 {
     font-size: 2em;
 }
 h2 {
-    font-size: 1.2em;
+    font-size: 1.6em;
 }
 h3 {
-    font-size: 1.6em;
+    font-size: 1.3em;
 }
 p, ul, ol {
     line-height: 180%;
@@ -157,11 +156,16 @@ p, ul, ol {
 ul, ol {
 }
 a {
-    color: #f4742a;
+    color: #0a3802;
     text-decoration: none;
 }
 a:hover {
     text-decoration: underline; 
+}
+.title {
+    font-size: 1.7em;
+    font-style:italic;
+    color: #0a38c2;   
 }
 img.border {
     border: 1px solid #aaaaaa;
@@ -178,9 +182,9 @@ img.aligncenter {
     margin: 0 auto;
 }
 #wrapper {
-    /*background: url("images/img01.jpg") repeat-x scroll left top transparent;*/
-    /*background: repeat-x scroll left top transparent;*/
-     background: none repeat-x scroll left top #f7f7f7; 
+    margin:0 auto;
+    width:980px;
+    height: auto;
 }
 #header {
     height: 63px;
@@ -234,8 +238,11 @@ img.aligncenter {
 #search-submit {
     display: none;
 }
-#menu {
-    height: 46px;
+#menu 
+{
+    background-image: url('../images/BESbanner.jpg');
+    background-repeat: no-repeat;
+    height: 133px;
     margin: 0 auto;
     padding: 0 0;
     width: 980px;
@@ -492,11 +499,11 @@ img.aligncenter {
 
 .product 
 {
-    padding: 3px;
+    padding: 10px;
     margin: -1px 0 0 -1px;
     border:1px solid black;
-    width: 300px;
-    height: 400px;
+    width: 280px;
+    height: 390px;
     float:left;
     }
 
