@@ -1,7 +1,7 @@
 ﻿
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Products";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -15,9 +15,10 @@
      @foreach (dynamic p in Model)
      {  
         <div class="product"> 
-            <span class="title" >@p.Title</span> <br/> 
-            @Assets.PdfLink(@p.PdfUrl, "Link") <br/>
-            @p.Description <br/>
+            <h2><span class="title" >@p.Title</span></h2> <br/> 
+            @Assets.PdfLink(@p.PdfUrl, "Learn more") <br/>
+            @Assets.Image(@p.ImageUrl) <br/>
+            <div class="desc" >  @p.Description</div> <br/>
             @p.PriceString <br/>
             @p.MemberPriceString <br/>
 

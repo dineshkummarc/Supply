@@ -2,9 +2,9 @@
     <link rel="stylesheet" href="/public/stylesheets/@cssFile" type="text/css" media="@media" /> 
 }
 @helper Image(string imageFile, int width = -1, int height = -1) {
-    var widthText = (width < 0) ? "" : string.Format("width='{0}'", width);
-    var heightText = (height < 0) ? "" : string.Format("height='{0}'", height);
-    <img src = "/public/images/@imageFile" />
+    var widthText = (width < 0) ? "" : string.Format("width={0}", width);
+    var heightText = (height < 0) ? "" : string.Format("height={0}", height);
+    <img src = "/public/images/@imageFile"  @widthText @heightText />
 }
 @helper PdfLink(string pdfFile, string linkText) {
     <a href="/public/pdf/@pdfFile" target="_blank" >@linkText</a>
