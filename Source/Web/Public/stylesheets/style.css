@@ -124,7 +124,7 @@ sup {
         .editButton{width: 25px; position:fixed; top:0px; right:25px;  background-color:#8f8; }
         .contentSpan{width: 1225px;}
        
-/* Start of the css template */ 
+/****** Start of the css template ******/ 
 body 
 {
      background: #000000;
@@ -183,7 +183,7 @@ img.aligncenter {
 }
 #wrapper {
     margin:0 auto;
-    width:980px;
+    width: 980px;
     height: auto;
 }
 #header {
@@ -250,8 +250,8 @@ img.aligncenter {
 #menu ul {
     line-height: normal;
     list-style: none outside none;
-    margin: 0;
-    padding: 0 0 0 4px;
+    margin: 0 0 0 546px;
+    padding: 10px 0 0 4px;
 }
 #menu li {
     float: left; 
@@ -259,7 +259,7 @@ img.aligncenter {
 }
 #menu li  a {
     border: medium none;
-    color: #FF821C;  
+    color: #000000;  
     display: block;
     float: left;
     font-family: Arial,Helvetica,sans-serif;
