@@ -136,7 +136,7 @@ body
 }
 h1, h2, h3 ,h4 {
     color: #2C2723;
-    font-weight: normal;
+    font-weight:bold;
     margin: 0;
     padding: 0;
 }
@@ -145,9 +145,11 @@ h1 {
 }
 h2 {
     font-size: 1.6em;
+    font-weight:bold;
 }
 h3 {
-    font-size: 1.3em;
+    font-size: 1.2em;
+    font-weight:bold;
 }
 p, ul, ol {
     line-height: 180%;
