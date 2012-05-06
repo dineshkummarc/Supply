@@ -206,7 +206,6 @@ img.aligncenter {
     font-family: Georgia,"Times New Roman",Times,serif;
     font-size: 42px;
     letter-spacing: -1px;
-    text-shadow: -1px 1px 2px #FFFFFF;
     text-transform: lowercase;
 }
 #logo a {
@@ -296,6 +295,9 @@ img.aligncenter {
     border-style: none solid;
     border-color: -moz-use-text-color #AAAAAA;   
 }
+#content{
+    margin: 5px auto;    
+}
 #page {
     -moz-border-bottom-colors: none;
     -moz-border-image: none;
@@ -330,7 +332,7 @@ img.aligncenter {
     display: block;
     float: left;
     padding: 25px;
-    width: 390px; 
+    width: 370px; 
     }
     
 .post .title {
@@ -520,27 +522,22 @@ img.aligncenter {
 .product 
 {
     padding: 10px;
-    margin: -1px 0 0 -1px;
-    border:1px solid black;
+    margin: -1px 10px 10px -1px;
+    border:2px solid black;
     width: 280px;
     height: 390px;
     float:left;
     }
-
-
-
  
-        #contactform label
-        {
-            width: 140px;
-            float: none;
-            display: block;
-            float:left;
-        } 
-        #contactform  
-        {
-            padding: 40px; 
-        }
+ #contactform label {
+    width: 120px;
+     float: none;
+    display: block;
+    float:left;
+ }       
+  #contactform  {
+      Padding: 30px; 
+}
          
 
 
