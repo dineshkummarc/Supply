@@ -263,7 +263,7 @@ img.aligncenter {
     display: block;
     float: left;
     font-family: Arial,Helvetica,sans-serif;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: bold;
     height: 27px;
     padding: 4px 30px 0;
@@ -271,25 +271,25 @@ img.aligncenter {
     text-transform:uppercase;
 }
 #menu li a:hover { 
-    color: #181818;
+    color: #a1a1a1;
 }
-#menu li.current_page_item {
-    background: none repeat scroll 0 0 #dedede;
+#menu li.current_page_item 
+{
+    background: none repeat scroll 0 0 #ffffff;
+   
 }
 #menu li.current_page_item a:hover {
-    color: #000;
+    color: #a1a1a1;
+   
 }
-#menu .current_page_item a {
-    background: none repeat scroll 0 0 #dedede;
-    color: #FFFFFF;
-}
-#menu a:hover {
-    text-decoration: none;
+#menu li.current_page_item a {
+    background: none repeat scroll 0 0 #ffffff;
+     text-decoration:underline;
 }
 #splash {
-    height: 106px;
+    height: 30px;
     margin: 0 auto;
-    width: 998px;
+    width: 980px;
     text-align: center;
     background-color: #f5f6f6;
     border-width: medium 1px;
@@ -440,48 +440,43 @@ img.aligncenter {
 }
 #footer {
     clear: both;
-    font-family: Arial,Helvetica,sans-serif;
-    height: 70px;
-    margin: 2px auto 0;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
     width: 980px;
 }
 #footer p {
+     font-family: Arial,Helvetica,sans-serif;
     color: #d1d1d1;
     line-height: normal;
     margin: 0;
-    padding: 10px 0 0;
+    padding: 0px 30px;
     text-align: center;
     text-transform: uppercase;
 }
 #footer ul {
     line-height: normal;
     list-style: none outside none;
-    margin: 0 0 0 552px;
-    padding: 90px 0 0 4px;
+    text-align:center;
 }
 #footer li {
-    float: left; 
-    
+     padding: 0 40px;
+     display:inline-block;
 }
 #footer li  a {
     border: medium none;
     color: #f2f0eb;  
-    display: block;
-    float: left;
+ 
     font-family: Arial,Helvetica,sans-serif;
-    font-size: 17px;
-    font-weight: bold;
-    height: 27px;
-    padding: 4px 30px 0;
+    font-size: 12px;
+   
     text-decoration: none;
     text-transform:uppercase;
 }
 #footer li a:hover { 
-    color: #181818;
+    color: #a1a1a1;
 }
-#footer a {
-    color: #ffffff;
-}
+
 #three-columns {
     margin: 0 auto 30px;
     padding: 50px 0 30px;
