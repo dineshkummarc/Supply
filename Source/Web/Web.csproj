@@ -249,8 +249,9 @@
     <Content Include="Public\images\cellfiller.png" />
     <Content Include="Public\images\forklifthook.png" />
     <Content Include="Public\images\iBattery11.png" />
-    <Content Include="Public\images\banner1.jpg" />
-    <Content Include="Public\images\banner2.jpg" />
+    <Content Include="Public\nivo-slider\demo\images\loading.gif" />
+    <Content Include="Public\nivo-slider\demo\images\sshow02.jpg" />
+    <Content Include="Public\nivo-slider\demo\images\sshow01.jpg" />
     <Content Include="Public\images\banner3.jpg" />
     <Content Include="Public\images\bg.png" />
     <Content Include="Public\images\cat_paw_prints.png" />
@@ -277,6 +278,37 @@
     <Content Include="Public\javascripts\slides.min.jquery.js" />
     <Content Include="Public\javascripts\underscore-min.js" />
     <Content Include="Public\mobile.html" />
+    <Content Include="Public\nivo-slider\demo\demo.html" />
+    <Content Include="Public\nivo-slider\demo\images\dev7logo.png" />
+    <Content Include="Public\nivo-slider\demo\images\nemo.jpg" />
+    <Content Include="Public\nivo-slider\demo\images\toystory.jpg" />
+    <Content Include="Public\nivo-slider\demo\images\up.jpg" />
+    <Content Include="Public\nivo-slider\demo\images\walle.jpg" />
+    <Content Include="Public\nivo-slider\demo\scripts\jquery-1.7.1.min.js" />
+    <Content Include="Public\nivo-slider\demo\style.css" />
+    <Content Include="Public\nivo-slider\jquery.nivo.slider.js" />
+    <Content Include="Public\nivo-slider\jquery.nivo.slider.pack.js" />
+    <Content Include="Public\nivo-slider\license.txt" />
+    <Content Include="Public\nivo-slider\nivo-slider.css" />
+    <Content Include="Public\nivo-slider\themes\default\arrows.png" />
+    <Content Include="Public\nivo-slider\themes\default\bullets.png" />
+    <Content Include="Public\nivo-slider\themes\default\default.css" />
+    <Content Include="Public\nivo-slider\themes\default\loading.gif" />
+    <Content Include="Public\nivo-slider\themes\orman\arrows.png" />
+    <Content Include="Public\nivo-slider\themes\orman\bullets.png" />
+    <Content Include="Public\nivo-slider\themes\orman\loading.gif" />
+    <Content Include="Public\nivo-slider\themes\orman\orman.css" />
+    <Content Include="Public\nivo-slider\themes\orman\readme.txt" />
+    <Content Include="Public\nivo-slider\themes\orman\ribbon.png" />
+    <Content Include="Public\nivo-slider\themes\orman\slider.png" />
+    <Content Include="Public\nivo-slider\themes\pascal\bullets.png" />
+    <Content Include="Public\nivo-slider\themes\pascal\controlnav.png" />
+    <Content Include="Public\nivo-slider\themes\pascal\featured.png" />
+    <Content Include="Public\nivo-slider\themes\pascal\loading.gif" />
+    <Content Include="Public\nivo-slider\themes\pascal\pascal.css" />
+    <Content Include="Public\nivo-slider\themes\pascal\readme.txt" />
+    <Content Include="Public\nivo-slider\themes\pascal\ribbon.png" />
+    <Content Include="Public\nivo-slider\themes\pascal\slider.png" />
     <Content Include="Public\Slideshow.html" />
     <Content Include="Public\stylesheets\style.css" />
     <Content Include="Public\Style.html" />
@@ -494,6 +526,7 @@
     <Content Include="Public\pdf\PVC_Syringe.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Public\nivo-slider\README" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

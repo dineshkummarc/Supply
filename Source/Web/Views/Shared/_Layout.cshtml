@@ -73,5 +73,17 @@
         <!-- end #footer -->
     </div>
     </div>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#menu a").each(function () {
+                var hreflink = $(this).attr("href");
+                if (location.href.toLowerCase().indexOf(hreflink.toLowerCase()) != -1) {
+                    $(this).parent("li").addClass("current_page_item");
+                }
+            });
+        }); 
+    </script>
 </body>
 </html>
