@@ -241,11 +241,11 @@ img.aligncenter {
 }
 #menu 
 {
-    background-image: url('../images/BESbanner.jpg');
+    background-image: url('/public/images/BESbanner.jpg');
     background-repeat: no-repeat;
     height: 133px;
-    margin: 0 auto;
-    padding: 0 0;
+    margin: 0 auto 20px 0;
+    padding: 0;
     width: 980px;
 }
 #menu ul {
@@ -264,7 +264,7 @@ img.aligncenter {
     display: block;
     float: left;
     font-family: Arial,Helvetica,sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
     height: 27px;
     padding: 4px 30px 0;
@@ -276,7 +276,7 @@ img.aligncenter {
 }
 #menu li.current_page_item 
 {
-    background: none repeat scroll 0 0 #ffffff;
+    background: none repeat scroll 0 0;
    
 }
 #menu li.current_page_item a:hover {
@@ -284,18 +284,13 @@ img.aligncenter {
    
 }
 #menu li.current_page_item a {
-    background: none repeat scroll 0 0 #ffffff;
+    background: none repeat scroll 0 0;
      text-decoration:underline;
 }
-#splash {
-    height: 30px;
+#slideshow {
+    height: 300px;
     margin: 0 auto;
-    width: 980px;
-    text-align: center;
-    background-color: #f5f6f6;
-    border-width: medium 1px;
-    border-style: none solid;
-    border-color: -moz-use-text-color #AAAAAA;   
+    width: 980px; 
 }
 #content{
     margin: 5px auto;    
