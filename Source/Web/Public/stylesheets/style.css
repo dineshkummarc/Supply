@@ -198,47 +198,7 @@ img.aligncenter {
     height: 63px;
     width: 660px;
 }
-#logo h1 {
-    margin: 0;
-    padding: 5px 0 0 30px;
-}
-#logo h1 {
-    color: #2D2722;
-    float: left;
-    font-family: Georgia,"Times New Roman",Times,serif;
-    font-size: 42px;
-    letter-spacing: -1px;
-    text-transform: lowercase;
-}
-#logo a {
-    color: #2D2722;
-    text-decoration: none;
-}
-#search {
-    float: right;
-    height: 63px;
-    width: 320px;
-}
-#search form {
-    padding: 18px 0 0 80px;
-}
-#search fieldset {
-    border: medium none;
-    margin: 0;
-    padding: 0;
-}
-#search-text {
-    background: none repeat scroll 0 0 #FFFFFF;
-    border: 1px solid #E5E5E5;
-    color: #7F7F81;
-    font: 11px Arial,Helvetica,sans-serif;
-    padding: 6px 10px;
-    text-transform: lowercase;
-    width: 195px;
-}
-#search-submit {
-    display: none;
-}
+
 #menu 
 {
     background-image: url('/public/images/BESbanner.jpg');
@@ -276,16 +236,15 @@ img.aligncenter {
 }
 #menu li.current_page_item 
 {
-    background: none repeat scroll 0 0;
-   
+    background: none;
+    text-decoration:underline;  
 }
 #menu li.current_page_item a:hover {
-    color: #a1a1a1;
-   
+    color: #a1a1a1;  
 }
 #menu li.current_page_item a {
-    background: none repeat scroll 0 0;
-     text-decoration:underline;
+    background:none;
+     /*text-decoration:underline;*/
 }
 #slideshow {
     height: 300px;

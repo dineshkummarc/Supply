@@ -16,7 +16,7 @@
         <div class="product"> 
             <div class="title" >@p.Title</div> <br/> 
             @Assets.PdfLink(@p.PdfUrl, "Learn more") <br/>
-            @Assets.Image(@p.ImageUrl) <br/>
+            @Assets.ImageLink(link: "/public/pdf/"+p.PdfUrl, imageFile: @p.ImageUrl) <br/>
             @p.Description <br/><br />
             @p.PriceString <br/>
 
