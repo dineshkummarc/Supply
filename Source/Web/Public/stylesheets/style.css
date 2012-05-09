@@ -130,7 +130,7 @@ body
      background: #000000;
     color: #000000;
     font-family: Arial,Helvetica,sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     margin: 0;
     padding: 0;
 }
@@ -293,7 +293,7 @@ img.aligncenter {
     width: 980px; 
 }
 #content{
-    margin: 5px auto;    
+    margin: 0 auto;    
 }
 #page {
     -moz-border-bottom-colors: none;
@@ -318,10 +318,10 @@ img.aligncenter {
 }
 #content { 
     float: left; 
-    padding: 0 0 0 0;
+    padding: 0 0 0 10px;
 } 
 .post { 
-    padding: 10px;
+    padding: 0px;
     width: 600px;
     
 }
@@ -514,14 +514,15 @@ img.aligncenter {
     font-weight: bold; 
 }
 .paypal{  }
+#produtcs{
+padding: 7px;
+}
 
-
-.product 
-{
-    padding: 10px;
-    margin: -1px 10px 10px -1px;
+.product {
+    padding: 15px 0 0 27px;
+    margin: 7px;
     border:2px solid black;
-    width: 280px;
+    width: 262px;
     height: 390px;
     float:left;
     }

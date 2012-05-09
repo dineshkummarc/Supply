@@ -3,17 +3,23 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
- @section slideshow{ 
-                <div id="slideshow"><img src="/Public/nivo-slider/demo/images/sshow01.jpg" width="980" height="300" alt="Lifting Beam" />
-                   
+
+ @*><img src="/public/nivo-slider/demo/images/sshow01.jpg" width="980" height="300" alt="Lifting Beam" />*@
+ @section slideshow{
+               <div id="slideshow"> <div class="slider-wrapper theme-default">
+            <div class="ribbon"></div>
+            <div id="slider" class="nivoSlider">
+                <img src="/public/nivo-slider/demo/images/sshow01.jpg" alt="" />
+                <img src="/public/nivo-slider/demo/images/sshow02.jpg" alt="" title="" data-transition="slideInLeft" />    
                 </div> 
-         }
+            </div>
+          </div>
 
-
+       }
             <div class="post">
                 <div class="Prospect">
                    
-                        <b>Battery Equipment Supply</b> represents
+                     <p> <br /><br /> <b>Battery Equipment Supply</b> represents
                         <b>Crown Batteries</b> and <b>Hobart Chargers</b> for use in your Electric Forklift
                         Trucks. We stock the most commonly used industrial batteries and chargers in our
                         facility in Villa Park. We have an extensive repair department which enables us
