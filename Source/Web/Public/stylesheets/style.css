@@ -15,7 +15,7 @@ fieldset, img {
     color: #959B94;
     margin: 0.5em 0 0;
     padding: 0.5em;
-    width: 392px;
+    width: 350px;
 }
 
 
@@ -130,7 +130,7 @@ body
      background: #000000;
     color: #000000;
     font-family: Arial,Helvetica,sans-serif;
-    font-size: 15px;
+    font-size: 17px;
     margin: 0;
     padding: 0;
 }
@@ -141,15 +141,15 @@ h1, h2, h3 ,h4 {
     padding: 0;
 }
 h1 {
-    font-size: 2em;
+    font-size: 2.0em;
 }
 h2 {
     font-size: 1.6em;
-    font-weight:bold;
+
 }
 h3 {
     font-size: 1.2em;
-    font-weight:bold;
+
 }
 p, ul, ol {
     line-height: 180%;
@@ -224,7 +224,7 @@ img.aligncenter {
     display: block;
     float: left;
     font-family: Arial,Helvetica,sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     height: 27px;
     padding: 4px 30px 0;
@@ -251,9 +251,6 @@ img.aligncenter {
     margin: 0 auto;
     width: 980px; 
 }
-#content{
-    margin: 0 auto;    
-}
 #page {
     -moz-border-bottom-colors: none;
     -moz-border-image: none;
@@ -277,7 +274,7 @@ img.aligncenter {
 }
 #content { 
     float: left; 
-    padding: 0 0 0 10px;
+    padding: 20px 0 0 10px;
 } 
 .post { 
     padding: 0px;
@@ -329,7 +326,7 @@ img.aligncenter {
 }
 #sidebar {
     float: right;
-    padding: 10px 0 0;
+    padding: 20px 20px 0 0;
     width: 330px;
 }
 #sidebar ul {
@@ -377,20 +374,7 @@ img.aligncenter {
 #sidebar a:hover {
     text-decoration: underline;
 }
-#calendar {
-}
-#calendar_wrap {
-    padding: 20px;
-}
-#calendar table {
-    width: 100%;
-}
-#calendar tbody td {
-    text-align: center;
-}
-#calendar #next {
-    text-align: right;
-}
+
 #footer-wrapper {
     background: scroll left top; 
     overflow: hidden;
@@ -426,7 +410,7 @@ img.aligncenter {
     color: #f2f0eb;  
  
     font-family: Arial,Helvetica,sans-serif;
-    font-size: 12px;
+    font-size: 15px;
    
     text-decoration: none;
     text-transform:uppercase;
@@ -435,38 +419,6 @@ img.aligncenter {
     color: #a1a1a1;
 }
 
-#three-columns {
-    margin: 0 auto 30px;
-    padding: 50px 0 30px;
-    width: 900px;
-}
-#three-columns ul {
-    list-style: none outside none;
-    margin: 0;
-    padding: 0;
-}
-#three-columns li {
-    border-bottom: 1px solid #29231F;
-    padding: 4px 0 6px;
-}
-#three-columns h2 {
-    color: #B0A792;
-    font-size: 28px;
-    padding: 0 0 20px;
-}
-#column1 {
-    float: left;
-    margin-right: 30px;
-    width: 280px;
-}
-#column2 {
-    float: left;
-    width: 280px;
-}
-#column3 {
-    float: right;
-    width: 280px;
-}
 .price {
     font-size: 3em;
     font-style: italic;
@@ -493,7 +445,7 @@ padding: 7px;
     float:left;
  }       
   #contactform  {
-      Padding: 30px; 
+      Padding: 20px; 
 }
          
 
