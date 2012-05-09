@@ -273,6 +273,8 @@
     <Content Include="Public\nivo-slider\demo\demo.html" />
     <Content Include="Public\nivo-slider\demo\images\dev7logo.png" />
     <Content Include="Public\nivo-slider\demo\images\nemo.jpg" />
+    <Content Include="Public\nivo-slider\demo\images\sshow03.jpg" />
+    <Content Include="Public\nivo-slider\demo\images\sshow04.jpg" />
     <Content Include="Public\nivo-slider\demo\images\toystory.jpg" />
     <Content Include="Public\nivo-slider\demo\images\up.jpg" />
     <Content Include="Public\nivo-slider\demo\images\walle.jpg" />
