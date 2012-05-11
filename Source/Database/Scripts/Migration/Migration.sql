@@ -171,3 +171,35 @@ end
 GO					    
  
 
+
+ 
+
+IF Not EXISTS ( SELECT  * FROM    sys.objects  WHERE   object_id = OBJECT_ID(N'[dbo].[Prospect]')  AND type IN ( N'U' ) ) 
+begin 
+PRINT N' [Prospect]' 
+CREATE TABLE Prospect
+	(
+		[Id] INT NOT NULL IDENTITY PRIMARY KEY ,
+		[Name] NVARCHAR(50) ,
+		[FirstName] NVARCHAR(50) ,
+		[LastName] NVARCHAR(50) ,
+		[Address1] NVARCHAR(100) ,
+		[Address2] NVARCHAR(100) ,
+		[Company] NVARCHAR(100) ,
+		[City] NVARCHAR(50) ,
+		[State] NVARCHAR(2) ,
+		[Zip] NVARCHAR(10) ,
+		[Phone] NVARCHAR(15) ,
+		[Email] NVARCHAR(100) , 
+		[Comment] NVARCHAR(MAX) ,
+		[Status] NVARCHAR(50) DEFAULT ('Active'),
+		[CreatedDate] DATETIME  DEFAULT (GETDATE()),
+		[CreatedBy] NVARCHAR(50) ,
+		[ModifiedDate] DATETIME  DEFAULT (GETDATE()),
+		[ModifiedBy] NVARCHAR(50)
+	);  
+
+	end
+		
+GO					    
+ 

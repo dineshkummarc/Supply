@@ -20,7 +20,7 @@ MvcTextTemplateHost mvcHost = (MvcTextTemplateHost)(Host);
     ViewBag.Title = "Edit";
 }
 
-<h2>Details</h2>
+<h2>Edit</h2>
 
 @Assets.Script("jquery.validate.min.js")  
 @Assets.Script("jquery.validate.unobtrusive.min.js")   
@@ -32,7 +32,7 @@ MvcTextTemplateHost mvcHost = (MvcTextTemplateHost)(Host);
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true) 
-        @Form.HiddenID(Model.ID)  
+        @Form.HiddenID(Model.Id)  
 <#
 foreach (ModelProperty property in GetModelProperties(mvcHost.ViewDataType)) { 
 	if (!property.IsPrimaryKey) {

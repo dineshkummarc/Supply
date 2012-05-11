@@ -85,12 +85,8 @@ foreach (ModelProperty property in GetModelProperties(mvcHost.ViewDataType)) {
 #>
 
 	
-	 
-	
 <script type="text/javascript">
-
     var dateRegExp = /^\/Date\((.*?)\)\/$/;
-
     function toDate(value) {
         var date = dateRegExp.exec(value);
         return new Date(parseInt(date[1]));
@@ -122,10 +118,8 @@ foreach (ModelProperty property in GetModelProperties(mvcHost.ViewDataType)) {
                 data: 'data',
                 total: 'total',
                 model: {
-                    id: 'ID',
-                    fields: {
-					
-				
+                    id: 'Id',
+                    fields: { 
 <#
 foreach (ModelProperty property in GetModelProperties(mvcHost.ViewDataType)) { 
 #> 
@@ -140,8 +134,7 @@ foreach (ModelProperty property in GetModelProperties(mvcHost.ViewDataType)) {
 
         $('#grid').kendoGrid({
             dataSource: dataSource,
-            columns: [
-				
+            columns: [ 
 <#
 foreach (ModelProperty property in GetModelProperties(mvcHost.ViewDataType)) { 
 #> 
