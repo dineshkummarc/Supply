@@ -164,7 +164,7 @@ begin
 ('Cell Filler','Automatic shut-off Cell Filler prolongs battery life','cellfiller.png','Cell_Filler.pdf',13.99,7.99),
 ('Forklift Attachment','a forklife adapter for the lifting beam','forklifthook.png','Forklift_Attachment.pdf',13.99,7.99),
 ('Hollow Post Drill','Steel precision drill assures a center post ','postdrill.png','Hollow_Post_Drill.pdf',14.99,7.99),
-('Lifiting Beam','Maximum strength for multi-shift electric truck user','liftingbeam.png','Lifiting_Beam.pdf',12.99,7.99),
+('Lifiting Beam','Maximum strength for multi-shift electric truck user','liftingbeam.png','Lifting_Beam.pdf',12.99,7.99),
 ('PVC Syringe','Used to adjust gravity on batteries','pvcsyringe.png','PVC_Syringe.pdf',17.99,7.99)
 end
 		
