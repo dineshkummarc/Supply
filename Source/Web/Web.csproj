@@ -141,6 +141,7 @@
   <ItemGroup>
     <Compile Include="App\Attributes\AuthorizeByRoleAttribute.cs" />
     <Compile Include="App\Attributes\RestHttpVerbFilter.cs" />
+    <Compile Include="App\Models\Prospect.cs" />
     <Compile Include="App\Models\Product.cs" />
     <Compile Include="App\Models\Customer.cs" />
     <Compile Include="App_Start\NinjectMVC3.cs" />
@@ -174,6 +175,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\PublicController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -516,6 +518,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Public\nivo-slider\README" />
+    <Content Include="Views\Public\ThankYou.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

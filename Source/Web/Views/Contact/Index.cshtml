@@ -8,54 +8,22 @@
      </h3>                                     
 <div class="clear"></div>
    
-    <div id="contactform">
-    
-            <p>
-                <label for="Company">
-                    Company: <em>*</em></label>  
-                 <input type="text" class="Company txt" id="ctl00_ContentPlaceHolder1_Company" maxlength="50" name="ctl00$ContentPlaceHolder1$Company"> 
-            </p>
-            <p>
-                <label for="Name">
-                    Name: <em>*</em></label> 
-                 <input type="text" class="Name txt" id="ctl00_ContentPlaceHolder1_Name" maxlength="50" name="ctl00$ContentPlaceHolder1$Name"> 
-            </p>
-            <p>
-                <label for="Address">
-                    Address:</label> 
-                 <input type="text" class="Address txt" id="ctl00_ContentPlaceHolder1_Address" maxlength="50" name="ctl00$ContentPlaceHolder1$Address"> 
-            </p>
-            <p>
-                <label for="City">City:</label> 
-                 <input type="text" class="City txt" id="ctl00_ContentPlaceHolder1_City" maxlength="50" name="ctl00$ContentPlaceHolder1$City"> 
-            </p>
-            <p>
-                <label for="State">
-                    State:</label> 
-                 <input type="text" class="State txt" id="ctl00_ContentPlaceHolder1_State" maxlength="50" name="ctl00$ContentPlaceHolder1$State"> 
-            </p>
-            <p>
-                <label for="Telephone">
-                    Telephone:</label> 
-                 <input type="text" class="Telephone txt" id="ctl00_ContentPlaceHolder1_Telephone" maxlength="50" name="ctl00$ContentPlaceHolder1$Telephone"> 
-            </p>
-            <p>
-                <label for="Email">
-                    Email: <em>*</em></label> 
-                 <input type="text" class="Email txt" id="ctl00_ContentPlaceHolder1_Email" maxlength="50" name="ctl00$ContentPlaceHolder1$Email"> 
-            </p>
-            <p>
-                <label for="Comments">
-                    Your Comments:</label> 
-                 <textarea style="height:60px;" class="Comments txt" id="ctl00_ContentPlaceHolder1_Comments" cols="20" rows="2" name="ctl00$ContentPlaceHolder1$Comments"></textarea>  
-            </p>
-            <p>
-                <em>* <span class="small">Required</span>.</em> </p>
-            <p>
-                <input type="submit" id="ctl00_ContentPlaceHolder1_btnSubmit" value="Submit" name="ctl00$ContentPlaceHolder1$btnSubmit">
-            </p>
-            <h3 style="padding-left:130px">BATTERY EQUIPMENT SUPPLY <br> 749 N. Harvard Ave, Villa Park, Illinois <br><br> 630-941-0700 phone<br> 630-941-1679 fax</h3>
-    </div>
+     <div id="contactform"> 
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()         
+            @Form.TextBoxRequired(name: "Company", value: Model.Company, maxLength:100)   
+            @Form.TextBoxRequired(name: "Name", value: Model.Name)   
+            @Form.TextBoxRequired(name: "Address1", value: Model.Address1)   
+            @Form.TextBoxRequired(name: "City", value: Model.City)   
+            @Form.TextBoxRequired(name: "State", value: Model.State, maxLength: 15)   
+            @Form.TextBoxRequired(name: "Phone", value: Model.Phone, maxLength: 15)   
+            @Form.TextBoxRequired(name: "Email", value: Model.Email)   
+            @Form.TextArea(name: "Comment", value: Model.Comment)   
+            @Form.Submit(value: "Submit")
+            @Html.ValidationSummary(true)  
+        } 
+         <h3 style="padding-left:130px">BATTERY EQUIPMENT SUPPLY <br> 749 N. Harvard Ave, Villa Park, Illinois <br><br> 630-941-0700 phone<br> 630-941-1679 fax</h3> 
 </div>
 
 

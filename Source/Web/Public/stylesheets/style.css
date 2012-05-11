@@ -154,6 +154,7 @@ h3 {
 p, ul, ol {
     line-height: 180%;
     margin-top: 0;
+    padding: 5px;
 }
 ul, ol {
 }

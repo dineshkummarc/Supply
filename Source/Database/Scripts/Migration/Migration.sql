@@ -187,7 +187,7 @@ CREATE TABLE Prospect
 		[Address2] NVARCHAR(100) ,
 		[Company] NVARCHAR(100) ,
 		[City] NVARCHAR(50) ,
-		[State] NVARCHAR(2) ,
+		[State] NVARCHAR(15) ,
 		[Zip] NVARCHAR(10) ,
 		[Phone] NVARCHAR(15) ,
 		[Email] NVARCHAR(100) , 

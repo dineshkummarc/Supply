@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     </div>
-                    @RenderSection("sidebar")
+                    @RenderSection("sidebar", false)
                     <div style="clear: both;">
                         &nbsp;</div>
                 </div>
@@ -66,7 +66,7 @@
                     <li>@Html.ActionLink("PRODUCTS", "Index", "PRODUCTS", new { area = "" }, new { })</li>
                     <li>@Html.ActionLink("CONTACT", "Index", "CONTACT", new { area = "" }, new { })</li>
                 </ul>
-                <br>
+                <br />
                 <p>
                     Battery Equipment Supply&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 749
                     N. Harvard Ave, Villa Park, Illinois &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;630-941-0700
