@@ -1,5 +1,4 @@
-﻿using Glimpse.Core.Configuration;
-using NLog.Layouts;
+﻿using NLog.Layouts;
 using Web.Infrastructure;
 using MvcMovie.Models;
 using Web.Attributes;

@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
-using Braintree;
+using System.Web.Mvc; 
 using System.Text;
 using System.Configuration;
 using MvcMovie.Models;
@@ -50,11 +49,12 @@ namespace MvcMovie.Controllers
             var payment = new PaymentModel { Number = "4111111111111111", ExpirationDate = "05/2012" }  ;
             return View(payment);
         }
-
+        /*
         [HttpPost]
         [ValidateAntiForgeryToken]
         public virtual ActionResult PaymentInfo(FormCollection collection)
         { 
+
             var payment = new PaymentModel
             {
                 Number = collection["Card Number"],
@@ -113,7 +113,7 @@ namespace MvcMovie.Controllers
             }
             return View(payment); 
         }
-
+        */
 
 
         [HttpGet]

@@ -47,7 +47,7 @@ namespace MvcMovie.Areas.Admin.Controllers
         }
 
 
-        protected virtual dynamic Get(string name)
+        public virtual dynamic Get(string name)
         {
             Func<dynamic, bool> check = x => x.Name == name;
             return Enumerable.Where<dynamic>(this.Get(), check);

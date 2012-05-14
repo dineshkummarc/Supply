@@ -10,6 +10,8 @@ using System.Web.Mvc;
 using MvcMovie.Models;
 using Web.Models;
 using Web.Infrastructure;
+using RestSharp;
+using MvcMovie.Areas.Admin.Controllers;
 namespace MvcMovie.Controllers{
     public class ContactController : CruddyController 
 	{
@@ -56,6 +58,34 @@ namespace MvcMovie.Controllers{
 
 
 
+        public static RestResponse SendEmail(string name, string address, string city, string state, string zip, string phone, string email, string company, string comment, string status, string modifiedBy)
+        {
+            var from = string.Format("{0} <{1}>", name, email);
+            var c = new ConfigsController(null);
+            var to = c.Get("MailTo") ?? "test@test.com";
+            var body = string.Format("Name:{0}<br /> Address:{1}<br /> City:{2}<br /> State:{3}<br /> Zip:{4}<br /> Phone:{5}<br /> Email:{6}<br /> Company:{7}<br /> Comments:{8}<br /> ", name, address, city, state, zip, phone, email, company, comment);
+
+
+            RestClient client = new RestClient();
+            client.BaseUrl = "https://api.mailgun.net/v2";
+            client.Authenticator = new HttpBasicAuthenticator("api", c.Get("MailGunApiKey"));
+
+            RestRequest request = new RestRequest();
+            request.AddParameter("domain", "app594.mailgun.org", ParameterType.UrlSegment);
+            request.Resource = "{domain}/messages";
+            request.AddParameter("from", from);
+            request.AddParameter("to", to);
+            //request.AddParameter("cc", "test@test.com");
+            //request.AddParameter("bcc", "test@test");
+            request.AddParameter("subject", "contact me");
+            request.AddParameter("text", body);
+            request.AddParameter("html", "<html>" + body + "</html>");
+            //request.AddFile("attachment", Path.Combine("files", "test.jpg"));
+            //request.AddFile("attachment", Path.Combine("files", "test.txt"));
+            request.Method = Method.POST;
+            return (RestResponse)client.Execute(request);
+
+        }
 
         /*
          * 

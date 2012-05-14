@@ -49,14 +49,8 @@
     <Reference Include="Altairis.Web.Security">
       <HintPath>..\packages\Altairis.Web.Security.2.4.3\lib\net40\Altairis.Web.Security.dll</HintPath>
     </Reference>
-    <Reference Include="Braintree-2.13.2">
-      <HintPath>..\packages\Braintree\Braintree-2.13.2.dll</HintPath>
-    </Reference>
     <Reference Include="Dynamic">
       <HintPath>..\packages\DynamicQuery.1.0\lib\35\Dynamic.dll</HintPath>
-    </Reference>
-    <Reference Include="Elmah, Version=1.2.14318.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\elmah.corelibrary.1.2.1\lib\Elmah.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
@@ -66,18 +60,6 @@
     </Reference>
     <Reference Include="FluentValidation.Mvc">
       <HintPath>..\packages\FluentValidation.MVC3.3.2.0.0\lib\Net40\FluentValidation.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Gallio">
-      <HintPath>..\packages\mbunit.3.3.454.0\lib\net40\Gallio.dll</HintPath>
-    </Reference>
-    <Reference Include="Gallio40">
-      <HintPath>..\packages\mbunit.3.3.454.0\lib\net40\Gallio40.dll</HintPath>
-    </Reference>
-    <Reference Include="Glimpse.Core">
-      <HintPath>..\packages\Glimpse.0.86\lib\net40\Glimpse.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Glimpse.Mvc3">
-      <HintPath>..\packages\Glimpse.Mvc3.0.86\lib\net40\Glimpse.Mvc3.dll</HintPath>
     </Reference>
     <Reference Include="KendoGridBinder">
       <HintPath>..\packages\KendoGridBinder.1.3\lib\KendoGridBinder.dll</HintPath>
@@ -107,6 +89,9 @@
     </Reference>
     <Reference Include="NLog.Extended">
       <HintPath>..\packages\NLog.Extended.2.0.0.2000\lib\net40-full\NLog.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.103.1\lib\net4\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data.Entity" />
@@ -147,7 +132,6 @@
     <Compile Include="App_Start\NinjectMVC3.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\ConfigsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\ElmahController.cs" />
     <Compile Include="Areas\Admin\Controllers\LogsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\RoleMembershipsController.cs" />
