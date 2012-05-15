@@ -6,7 +6,8 @@ using System.Web.Mvc;
 using Web.Infrastructure;
 using MvcMovie.Models;
 using NLog;
-using Web.Attributes; 
+using Web.Attributes;
+using System.Configuration; 
 
 namespace MvcMovie.Areas.Admin.Controllers
 {
@@ -48,9 +49,19 @@ namespace MvcMovie.Areas.Admin.Controllers
 
 
         public virtual dynamic Get(string name)
-        {
-            Func<dynamic, bool> check = x => x.Name == name;
-            return Enumerable.Where<dynamic>(this.Get(), check);
+        { 
+            dynamic ret;
+            if (ConfigurationManager.AppSettings[name] != null)
+            {
+                ret = ConfigurationManager.AppSettings[name];
+            }
+            else
+            { 
+                Func<dynamic, bool> check = x => x.Name == name;
+                var config = Enumerable.FirstOrDefault<dynamic>(this.Get(), check); 
+                ret = config == null ? null : config.Value;
+            }
+            return ret;
         }
 
 
