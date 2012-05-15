@@ -1,6 +1,16 @@
-﻿@{
+﻿@using Microsoft.Web.Helpers;
+@{
     ViewBag.Title = "Recapcha";
 }
 
 <h2>Recapcha</h2>
 
+
+
+
+
+ 
+@using (Html.BeginForm("isCaptchaValid", "Public", FormMethod.Post))
+{
+    @ReCaptcha.GetHtml(publicKey: "6LePfdESAAAAAIYnBN8T0OdSYjniSBRvrv9i9kHs", theme: "red")
+}

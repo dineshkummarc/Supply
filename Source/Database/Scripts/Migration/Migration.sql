@@ -91,7 +91,8 @@ GO
 INSERT INTO  [Config] ( [Name], [Value] ) VALUES  
 ('BrainTree-MerchantId', 'BrainTree-MerchantId'  )  ,
 ('BrainTree-PublicKey', 'BrainTree-PublicKey'  )  ,
-('BrainTree-PrivateKey', 'BrainTree-PrivateKey'  ) 
+('BrainTree-PrivateKey', 'BrainTree-PrivateKey'  ) ,
+('Recaptcha-PrivateKey', 'Recaptcha-PrivateKey'  ) 
 GO
 
  
