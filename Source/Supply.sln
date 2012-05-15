@@ -16,6 +16,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcceptanceTests", "Acceptan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{F0AA6FFD-2A09-4086-8032-FBF223BC2D9E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReferenceBin", "ReferenceBin", "{6504EE1F-A472-4F2C-89A7-D11F2144BADD}"
+	ProjectSection(SolutionItems) = preProject
+		ReferenceBin\Recaptcha.dll = ReferenceBin\Recaptcha.dll
+		ReferenceBin\Recaptcha.pdb = ReferenceBin\Recaptcha.pdb
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Supply.vsmdi

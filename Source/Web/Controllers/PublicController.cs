@@ -22,7 +22,14 @@ namespace MvcMovie.Controllers{
         public virtual ViewResult Index()
         {
             return View();
+        }
+
+        public virtual ViewResult Recapcha()
+        {
+            return View();
         }  
+
+
     }
 }
 
