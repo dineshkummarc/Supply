@@ -10,7 +10,11 @@
 
 
  
-@using (Html.BeginForm("isCaptchaValid", "Public", FormMethod.Post))
-{
-    @ReCaptcha.GetHtml(publicKey: "6LePfdESAAAAAIYnBN8T0OdSYjniSBRvrv9i9kHs", theme: "red")
+@using (Html.BeginForm("Recapcha", "Public", FormMethod.Post))
+{ 
+    @Html.AntiForgeryToken()          
+    @Form.TextBoxRequired(name: "Name", value: Model.Name)   
+    @ReCaptcha.GetHtml(publicKey: "6LePfdESAAAAAIYnBN8T0OdSYjniSBRvrv9i9kHs", theme: "clean") 
+    @Form.Submit(value: "Submit")
+    @Html.ValidationSummary(true)  
 }

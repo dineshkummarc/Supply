@@ -147,8 +147,11 @@ namespace MvcMovie.Controllers{
         public class ContactModelValidator : AbstractValidator<ContactModel>
         {
             public ContactModelValidator()
-            { 
+            {
+                RuleFor(x => x.Name).NotEmpty().WithMessage("Name is Required"); 
             }
+             
+
         }
  
     }

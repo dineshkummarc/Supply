@@ -5,6 +5,7 @@ using System.Web;
 using KendoGridBinder;
 using System.Text;
 using System.Web.Mvc;
+using Microsoft.Web.Helpers;
 using MvcMovie.Areas.Admin.Controllers;
 using Web.Models;
 using Web.Infrastructure;
@@ -25,34 +26,48 @@ namespace MvcMovie.Controllers{
             return View();
         }
 
+        [HttpGet]
         public virtual ViewResult Recapcha()
         {
-            return View();
+            var m = new ContactController.ContactModel {  };
+            return View(m);
         }
 
-        //be reminded that i use ASP.net MVC
-        //it will return a JSON boolean.
 
-        [AcceptVerbs(HttpVerbs.Post)]
-        public bool isCaptchaValid(string challenge, string response)
-        {
-            var c = new ConfigsController(null);
-            var privateKey = c.Get("Recaptcha-PrivateKey");
-            // Add your operation implementation here
-            Recaptcha.RecaptchaValidator validator = new Recaptcha.RecaptchaValidator
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Recapcha(ContactController.ContactModel model)
+        { 
+            if (Valid() )
             {
-                PrivateKey = privateKey,  
-                RemoteIP = Request.UserHostAddress,
-                Challenge = challenge,
-                Response = response
-
-            };
-            Recaptcha.RecaptchaResponse Cresponse = validator.Validate();
-            return Cresponse.IsValid;
+                return RedirectToAction("ThankYou", "Public");
+            }
+            else
+            {
+                return View(model); 
+            }
         }
 
-
-
-    }
+        private bool Valid()
+        {
+            var valid = true;
+            if (!ModelState.IsValid)
+            {
+                valid = false;
+                ModelState.AddModelError(string.Empty,  "  " + string.Join(" ; ", ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage)));
+            }
+            else
+            {
+                var c = new ConfigsController(null);
+                var privateKey = c.Get("Recaptcha-PrivateKey");
+                if (!ReCaptcha.Validate(privateKey: privateKey))
+                {
+                    valid = false;
+                    ModelState.AddModelError(string.Empty, "Invalid ReCaptcha");
+                }
+            }
+            return valid;
+        }
+	}
 }
 
