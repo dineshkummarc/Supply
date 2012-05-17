@@ -43,13 +43,16 @@ namespace MvcMovie.Controllers{
                     o.Address2 = model.Address2;
                     o.City = model.City;
                     o.State = model.State;
+                    o.Zip = model.Zip;
                     o.Phone = model.Phone;
                     o.Name = model.Name;
                     o.Company = model.Company;
                     o.Comment = model.Comment;
-                }
-                table.Insert(o); 
+                    o.IpAddress = Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
 
+                }
+                table.Insert(o);
+                SendEmail(o.Name, o.Address1, o.City, o.State, o.Zip, o.Phone, o.Email, o.Company, o.Comment );
                 return RedirectToAction("ThankYou", "Public");
             }
             ModelState.AddModelError(string.Empty, "Oops,  " + string.Join(" ; ", ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage))); 
@@ -58,12 +61,12 @@ namespace MvcMovie.Controllers{
 
 
 
-        public static RestResponse SendEmail(string name, string address, string city, string state, string zip, string phone, string email, string company, string comment, string status, string modifiedBy)
+        public static RestResponse SendEmail(string name, string address, string city, string state, string zip, string phone, string email, string company, string comment )
         {
             var from = string.Format("{0} <{1}>", name, email);
             var c = new ConfigsController(null);
             var to = c.Get("MailTo") ?? "test@test.com";
-            var body = string.Format("Name:{0}<br /> Address:{1}<br /> City:{2}<br /> State:{3}<br /> Zip:{4}<br /> Phone:{5}<br /> Email:{6}<br /> Company:{7}<br /> Comments:{8}<br /> ", name, address, city, state, zip, phone, email, company, comment);
+            var body = string.Format("Name:{0}<br /> Address:{1}<br /> City:{2}<br /> State:{3}<br /> Zip:{4}<br /> Phone:{5}<br /> Email:{6}<br /> Company:{7}<br /> Comments:{8}<br />   ", name, address, city, state, zip, phone, email, company, comment);
 
 
             RestClient client = new RestClient();

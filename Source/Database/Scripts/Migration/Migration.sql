@@ -76,8 +76,6 @@ GO
 
 
 
-
- 
  
 IF EXISTS ( SELECT  * FROM    sys.objects  WHERE   object_id = OBJECT_ID(N'[dbo].[Config]')  AND type IN ( N'U' ) )  DROP TABLE [Config]
 CREATE TABLE [dbo].[Config](
@@ -92,7 +90,9 @@ INSERT INTO  [Config] ( [Name], [Value] ) VALUES
 ('BrainTree-MerchantId', 'BrainTree-MerchantId'  )  ,
 ('BrainTree-PublicKey', 'BrainTree-PublicKey'  )  ,
 ('BrainTree-PrivateKey', 'BrainTree-PrivateKey'  ) ,
-('Recaptcha-PrivateKey', 'Recaptcha-PrivateKey'  ) 
+('Recaptcha-PrivateKey', 'Recaptcha-PrivateKey'  ) ,
+('MailTo', ''  )  ,
+('MAILGUN_API_KEY', 'MAILGUN_API_KEY'  ) 
 GO
 
  
@@ -173,6 +173,7 @@ GO
  
 
 
+
  
 
 IF Not EXISTS ( SELECT  * FROM    sys.objects  WHERE   object_id = OBJECT_ID(N'[dbo].[Prospect]')  AND type IN ( N'U' ) ) 
@@ -193,6 +194,11 @@ CREATE TABLE Prospect
 		[Phone] NVARCHAR(15) ,
 		[Email] NVARCHAR(100) , 
 		[Comment] NVARCHAR(MAX) ,
+
+		[IpAddress] [nvarchar](100) NULL,
+		[Browser] [nvarchar](100) NULL,
+		[Session] [nvarchar](100) NULL,
+
 		[Status] NVARCHAR(50) DEFAULT ('Active'),
 		[CreatedDate] DATETIME  DEFAULT (GETDATE()),
 		[CreatedBy] NVARCHAR(50) ,
