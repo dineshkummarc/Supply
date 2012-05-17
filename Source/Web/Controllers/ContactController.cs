@@ -63,10 +63,10 @@ namespace MvcMovie.Controllers{
 
         public static RestResponse SendEmail(string name, string address, string city, string state, string zip, string phone, string email, string company, string comment )
         {
-            var from = string.Format("{0} <{1}>", name, email);
+            var from = string.Format("{0} <{1}>", "Website Contact", "NO-REPLY@industrialbatteryinc.com");
             var c = new ConfigsController(null);
             var to = c.Get("MailTo") ?? "test@test.com";
-            var body = string.Format("Name:{0}<br /> Address:{1}<br /> City:{2}<br /> State:{3}<br /> Zip:{4}<br /> Phone:{5}<br /> Email:{6}<br /> Company:{7}<br /> Comments:{8}<br />   ", name, address, city, state, zip, phone, email, company, comment);
+            var body = string.Format("Name: {0}<br /> Address: {1}<br /> City: {2}<br /> State: {3}<br /> Zip: {4}<br /> Phone: {5}<br /> Email: {6}<br /> Company: {7}<br /> Comments: {8}<br />   ", name, address, city, state, zip, phone, email, company, comment);
 
 
             RestClient client = new RestClient();
@@ -86,8 +86,8 @@ namespace MvcMovie.Controllers{
             //request.AddFile("attachment", Path.Combine("files", "test.jpg"));
             //request.AddFile("attachment", Path.Combine("files", "test.txt"));
             request.Method = Method.POST;
-            return (RestResponse)client.Execute(request);
-
+            var r =   (RestResponse)client.Execute(request);
+            return r;
         }
 
         /*
