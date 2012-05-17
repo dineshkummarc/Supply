@@ -74,7 +74,7 @@ namespace MvcMovie.Controllers{
             client.Authenticator = new HttpBasicAuthenticator("api", c.Get("MailGunApiKey"));
 
             RestRequest request = new RestRequest();
-            request.AddParameter("domain", "app594.mailgun.org", ParameterType.UrlSegment);
+            request.AddParameter("domain",  "app809.mailgun.org", ParameterType.UrlSegment);
             request.Resource = "{domain}/messages";
             request.AddParameter("from", from);
             request.AddParameter("to", to);
