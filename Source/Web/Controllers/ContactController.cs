@@ -71,7 +71,7 @@ namespace MvcMovie.Controllers{
 
             RestClient client = new RestClient();
             client.BaseUrl = "https://api.mailgun.net/v2";
-            client.Authenticator = new HttpBasicAuthenticator("api", c.Get("MailGunApiKey"));
+            client.Authenticator = new HttpBasicAuthenticator("api", c.Get("MAILGUN_API_KEY"));
 
             RestRequest request = new RestRequest();
             request.AddParameter("domain",  "app809.mailgun.org", ParameterType.UrlSegment);
@@ -108,7 +108,7 @@ namespace MvcMovie.Controllers{
 
             RestClient client = new RestClient();
             client.BaseUrl = "https://api.mailgun.net/v2";
-            client.Authenticator = new HttpBasicAuthenticator("api", Contact.GetMailGunApiKey());
+            client.Authenticator = new HttpBasicAuthenticator("api", Contact.GetMAILGUN_API_KEY());
 
             RestRequest request = new RestRequest();
             request.AddParameter("domain", "app594.mailgun.org", ParameterType.UrlSegment);
